@@ -1,3 +1,13 @@
+TODO:
+-- add support for the following command-line options
+  1 ruby base path (edit init.d/puppet) to properly point
+    to this path
+  2 server/client install so that /etc/hosts can be properly
+    edited
+  3 specify address of server, if install is a client install
+  4 add support for adding 'puppet' user and group so that
+    'puppet-masterd --mkusers' doesn't have to be used.
+
 mkdir /etc/puppet
 mkdir /etc/puppet/manifests
 mkdir /etc/logcheck/ignore.d.server/

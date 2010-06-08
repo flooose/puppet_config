@@ -1,38 +1,41 @@
-task :build_directories do |t, arg|
-  `sudo mkdir /etc/puppet`
-  #sudo mkdir /etc/puppet/manifests
-  #sudo mkdir /var/run/puppet
-  #sudo mkdir -p /etc/logcheck/ignore.d.server/
+task :build_directories do |t|
+  puts "mkdir /etc/puppet: success" unless `sudo mkdir /etc/puppet`
+  puts "mkdir /etc/puppet/manifests: success" unless `sudo mkdir /etc/puppet/manifests`
+  puts "mkdir /etc/puppet: success" unless `sudo mkdir /var/run/puppet`
+  puts "mkdir /etc/puppet: success" unless `sudo mkdir -p /etc/logcheck/ignore.d.server/`
 end
 
-task :install => [:build_directories, :copy_files, :set_permissions] do
+task :install => [:build_directories, :copy_files, :set_permissions, :add_passwd_entry] do
 end
 
 task :copy_files do
   puts "Installing files in their respective /etc/ and directories."
-  #cp logcheck/ignore.d.server/puppet /etc/logcheck/ignore.d.server/
-  #cp logrotate.d/puppet /etc/logrotate
-  #cp puppet/puppet.conf /etc/puppet/puppet.conf
-  #cp puppet/manifests/site.pp /etc/puppet/manifests/site.pp
-  #cp init.d/puppet /etc/init.d (perm: 755)
-  #cp default/puppet /etc/default (perm: 644
+  `sudo cp logcheck/ignore.d.server/puppet /etc/logcheck/ignore.d.server/`
+  `sudo cp logrotate.d/puppet /etc/logrotate.d/`
+  `sudo cp puppet/puppet.conf /etc/puppet/puppet.conf`
+  `sudo cp puppet/manifests/sites.pp /etc/puppet/manifests/sites.pp`
+  `sudo cp init.d/puppet /etc/init.d`
+  `sudo cp default/puppet /etc/default`
 end
 
 task :set_permissions do
-  
+  `sudo chown puppet:puppet /var/run/puppet`
+end
+
+task :add_passwd_entry do
+
 end
 
 task :uninstall do
-  #rmdir /etc/logcheck/ignore.d.server/puppet
-  #rmdir /etc/logrotate/puppet
-  #rmdir /etc/puppet/puppet.conf
-  #rmdir /etc/puppet/manifests/site.pp
-  #rmdir /etc/init.d/puppet
-  #rmdir /etc/default/puppet
+  `sudo rm /etc/logcheck/ignore.d.server/puppet`
+  `sudo rm /etc/logrotate.d/puppet`
+  `sudo rm /etc/puppet/puppet.conf`
+  `sudo rm /etc/puppet/manifests/sites.pp`
+  `sudo rm /etc/init.d/puppet`
+  `sudo rm /etc/default/puppet`
+  `sudo rmdir /etc/puppet/manifests`
   `sudo rmdir /etc/puppet`
-  #sudo rmdir /etc/puppet/manifests
-  #sudo rmdir /var/run/puppet
-  #sudo rmdir -p /etc/logcheck/ignore.d.server/
+  `sudo rmdir /var/run/puppet`
 end
 
 ## Creates the puppet config directory
