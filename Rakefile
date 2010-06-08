@@ -6,7 +6,10 @@ task :build_directories do
   sudo mkdir -p /etc/logcheck/ignore.d.server/
 end
 
-task :install => [:build_directories] do
+task :install => [:build_directories, :copy_files, :set_permissions] do
+end
+
+task :copy_files do
   puts "Installing files in their respective /etc/ and directories."
   cp logcheck/ignore.d.server/puppet /etc/logcheck/ignore.d.server/
   cp logrotate.d/puppet /etc/logrotate
@@ -14,6 +17,19 @@ task :install => [:build_directories] do
   cp puppet/manifests/site.pp /etc/puppet/manifests/site.pp
   cp init.d/puppet /etc/init.d (perm: 755)
   cp default/puppet /etc/default (perm: 644
+end
+
+task :set_permissions do
+  
+end
+
+task :uninstall do
+  rm /etc/logcheck/ignore.d.server/puppet
+  rm /etc/logrotate/puppet
+  rm /etc/puppet/puppet.conf
+  rm /etc/puppet/manifests/site.pp
+  rm /etc/init.d/puppet
+  rm /etc/default/puppet
 end
 
 ## Creates the puppet config directory
