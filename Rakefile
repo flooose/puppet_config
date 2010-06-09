@@ -13,7 +13,7 @@ task :copy_files do
   `sudo cp logcheck/ignore.d.server/puppet /etc/logcheck/ignore.d.server/`
   `sudo cp logrotate.d/puppet /etc/logrotate.d/`
   `sudo cp puppet/puppet.conf /etc/puppet/puppet.conf`
-  `sudo cp puppet/manifests/sites.pp /etc/puppet/manifests/sites.pp`
+  `sudo cp puppet/manifests/site.pp /etc/puppet/manifests/site.pp`
   `sudo cp init.d/puppet /etc/init.d`
   `sudo cp default/puppet /etc/default`
 end
@@ -30,7 +30,7 @@ task :uninstall do
   `sudo rm /etc/logcheck/ignore.d.server/puppet`
   `sudo rm /etc/logrotate.d/puppet`
   `sudo rm /etc/puppet/puppet.conf`
-  `sudo rm /etc/puppet/manifests/sites.pp`
+  `sudo rm /etc/puppet/manifests/site.pp`
   `sudo rm /etc/init.d/puppet`
   `sudo rm /etc/default/puppet`
   `sudo rmdir /etc/puppet/manifests`
