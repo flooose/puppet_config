@@ -1,5 +1,4 @@
 class sudo {
-  module_home=#"puppet/modules/sudo/manifests"
 
   # Ensures that this package is always up to date
   package { sudo: ensure => latest }

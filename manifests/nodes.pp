@@ -7,6 +7,7 @@
 # 4. /home/#{user}/.ssh/*
 # 5. ....
 node basenode {
+    include bashrc
     include sudo
 }
 

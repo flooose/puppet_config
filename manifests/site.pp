@@ -1,11 +1,14 @@
-import "classes/*"
+# /etc/puppet/manifests/site.pp
 
-# Default for all nodes
-node default {
-  include sudo
-}
+import "modules"
+import "nodes"
 
-# /home/adva/somefile.puppet
-file { "/home/adva/somefile.puppet":
-        owner => adva, group => adva, mode => 644
-}
+## We probably don't want this yet, since we don't know what
+#
+## The filebucket option allows for file backups to the server
+## it does.
+#filebucket { main: server => 'my.server.name' }
+#
+## Set global defaults - including backing up all files to the main filebucket and adds a global path
+#File { backup => main }
+#Exec { path => "/usr/bin:/usr/sbin/:/bin:/sbin" }
