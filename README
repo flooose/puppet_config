@@ -17,14 +17,5 @@ TODO:
   4 add support for adding 'puppet' user and group so that
     'puppet-masterd --mkusers' doesn't have to be used.
 
-mkdir /etc/puppet
-mkdir /etc/puppet/manifests
-mkdir /etc/logcheck/ignore.d.server/
-mkdir /var/run/puppet/
-
-cp logcheck/ignore.d.server/puppet /etc/logcheck/ignore.d.server/
-cp logrotate.d/puppet /etc/logrotate
-cp puppet/puppet.conf /etc/puppet/puppet.conf
-cp puppet/manifests/site.pp /etc/puppet/manifests/site.pp
 cp init.d/puppet /etc/init.d (perm: 755)
-cp default/puppet /etc/default (perm: 644
+cp default/puppet /etc/default (perm: 644)
