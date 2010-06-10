@@ -3,7 +3,7 @@ This is not meant to be a public project. It only serves
 as an access point for some server configurations.
 
 If you choose to use this, beware, there are security
-issues, bad code and DEADLY LIONS here.
+issues, bad code and DEADLY LIONS.
 
 Good luck!
 
@@ -19,3 +19,10 @@ TODO:
 
 cp init.d/puppet /etc/init.d (perm: 755)
 cp default/puppet /etc/default (perm: 644)
+
+########## Notes to self #################
+for server set up:
+  1 clone repository
+  2 puppetmasterd --mkusers
+  3 puppetmasterd --genconfig > /etc/puppet/puppet.conf
+  4 edit /etc/puppet.conf
