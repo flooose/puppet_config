@@ -1,21 +1,36 @@
-task :build_directories do |t|
-  puts "mkdir /etc/puppet: success" unless `sudo mkdir /etc/puppet`
-  puts "mkdir /etc/puppet/manifests: success" unless `sudo mkdir /etc/puppet/manifests`
-  puts "mkdir /etc/puppet: success" unless `sudo mkdir /var/run/puppet`
-  puts "mkdir /etc/puppet: success" unless `sudo mkdir -p /etc/logcheck/ignore.d.server/`
-end
+# TODO:
+#- Make variables referencing directories end
+#  with a trailing "/" i.e. "etc/" instead of
+#  "etc". This is safer because if the system
+#  will complain if mistakenly think "file/"
+#  is a directory instead of regular file.
+      
+# Directories that might or do need to be created
+pid_dir = "/var/run/puppet"
+logcheck_dir = "/etc/logcheck/ignore.d.server/"
+
+# For working with files and directories outside of the repository
+etc = "/etc"
+initd = "/init.d"
+defaultd = "/default"
+log_rotate_dir = "/logrotate.d"
+
+puppet_conf = etc + "/puppet"
 
 task :install => [:build_directories, :copy_files, :set_permissions, :add_passwd_entry] do
 end
 
+task :build_directories do |t|
+  puts "mkdir /etc/puppet: success" unless `sudo mkdir #{pid_dir}`
+  puts "mkdir /etc/puppet: success" unless `sudo mkdir -p #{logcheck_dir}`
+end
+
 task :copy_files do
   puts "Installing files in their respective /etc/ and directories."
-  `sudo cp logcheck/ignore.d.server/puppet /etc/logcheck/ignore.d.server/`
-  `sudo cp logrotate.d/puppet /etc/logrotate.d/`
-  `sudo cp puppet/puppet.conf /etc/puppet/puppet.conf`
-  `sudo cp puppet/manifests/site.pp /etc/puppet/manifests/site.pp`
-  `sudo cp init.d/puppet /etc/init.d`
-  `sudo cp default/puppet /etc/default`
+  `sudo cp logcheck/ignore.d.server/puppet #{logcheck_dir}`
+  `sudo cp logrotate.d/puppet #{etc + log_rotate_dir}`
+  `sudo cp init.d/puppet #{etc + initd}`
+  `sudo cp default/puppet #{etc + defaultd}`
 end
 
 task :set_permissions do
@@ -27,29 +42,8 @@ task :add_passwd_entry do
 end
 
 task :uninstall do
-  `sudo rm /etc/logcheck/ignore.d.server/puppet`
-  `sudo rm /etc/logrotate.d/puppet`
-  `sudo rm /etc/puppet/puppet.conf`
-  `sudo rm /etc/puppet/manifests/site.pp`
-  `sudo rm /etc/init.d/puppet`
-  `sudo rm /etc/default/puppet`
-  `sudo rmdir /etc/puppet/manifests`
-  `sudo rmdir /etc/puppet`
-  `sudo rmdir /var/run/puppet`
+  `sudo rm #{logcheck_dir + "puppet"}`
+  `sudo rm #{etc + log_rotate_dir + "/puppet"}`
+  `sudo rm #{etc + initd + "/puppet"}`
+  `sudo rm #{etc + defaultd + "/puppet"}`
 end
-
-## Creates the puppet config directory
-#directory "etc/puppet/manifests"
-#
-## Creates the directory for the puppet pid file
-#directory "var/run/puppet"
-#
-#
-#rule '.*' => ["var/run/puppet/", "etc/puppet/manifests/"] do
-#  echo "something"
-#end
-# 
-##file "tmp/hello.tmp" => "tmp" do
-##      sh "echo 'Hello' > 'tmp/hello.tmp'"
-##end
-#
