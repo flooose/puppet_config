@@ -1,0 +1,66 @@
+Host appsk1
+  HostName ext-con-sk-01.siewert-kau.de
+  Port 42022
+  User application
+
+Host sk1
+  HostName ext-con-sk-01.siewert-kau.de
+  Port 42022
+  User adva
+
+Host sk2
+  HostName ext-con-sk-02.siewert-kau.de
+  Port 42022
+  User adva
+
+Host appsk2
+  HostName ext-con-sk-02.siewert-kau.de
+  Port 42022
+  User application
+
+Host sktest
+  HostName ext-con-sk-test.siewert-kau.de
+  Port 42022
+  User adva
+
+Host appsktest
+  HostName ext-con-sk-test.siewert-kau.de
+  Port 42022
+  User application
+
+Host shost
+  HostName adva-cms.org
+  Port 28281
+  User root
+
+Host dshost
+  HostName adva-cms.org
+  Port 28281
+  User deploy
+
+Host charlie
+  HostName 193.159.180.41
+  Port 42022
+  User adva
+
+Host floess
+  HostName lectura.cs.arizona.edu
+  User floess
+
+Host bravo
+  HostName 193.159.180.41
+  Port 42020
+  User adva
+
+Host bravochris
+  HostName 193.159.180.41
+  Port 42020
+  User chris.floess
+
+Host advabest
+  HostName advabest.com
+  User rails
+
+Host staging_advabest
+  HostName staging.advabest.com
+  User rails
