@@ -9,6 +9,7 @@
 node default {
     include bashrc
     include sudo
+    include somefile
 }
 
 # Blueprint for potential future nodes.
