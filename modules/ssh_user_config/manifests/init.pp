@@ -1,11 +1,8 @@
 # /etc/puppet/modules/ssh_user_config/manifests/init.pp
 
-class bashrc {
+class ssh_user_config {
 
-  file { "/etc/bash.bashrc":
-    owner => "root",
-    group => "root",
+  file { "/home/adva/.ssh/config":
     #(this probably doesn't work yet) source  => "puppet:///bashrc/bash.bashrc",
-    require => Package["bash"],
   }
 }

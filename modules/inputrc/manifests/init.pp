@@ -1,6 +1,6 @@
 # /etc/puppet/modules/inputrc/manifests/init.pp
 
-class bashrc {
+class inputrc {
 
   file { "/etc/inputrc":
     owner => "root",

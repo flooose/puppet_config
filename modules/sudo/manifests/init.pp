@@ -4,6 +4,7 @@ class sudo {
   package { sudo: ensure => latest }
 
   file { "/etc/sudoers":
+    #ensure => exists,
     owner => "root",
     group => "root",
     mode  => 440,
