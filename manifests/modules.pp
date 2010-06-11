@@ -3,5 +3,5 @@
 import "sudo"
 import "bashrc"
 import "inputrc"
-import "ssh_user_config"
+import "ssh_etc_config"
 import "somefile"
