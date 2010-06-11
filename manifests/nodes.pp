@@ -6,12 +6,12 @@
 # 3. /home/#{user}/.bashrc
 # 4. /home/#{user}/.ssh/*
 # 5. ....
-node basenode {
+node default {
     include bashrc
     include sudo
 }
 
 # Blueprint for potential future nodes.
-node b2c.test inherits basenode {
+node 'b2c.test' inherits default {
 
 }
