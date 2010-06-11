@@ -15,3 +15,8 @@ node default {
 node 'b2c.test' inherits default {
 
 }
+
+# Test node for sktest
+node 'ext-con-sk-test.siewert-und-kau' inherits default{
+
+}
