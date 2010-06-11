@@ -12,6 +12,6 @@ node basenode {
 }
 
 # Blueprint for potential future nodes.
-node b2c.test inherits from basenode {
+node b2c.test inherits basenode {
 
 }
