@@ -2,7 +2,7 @@
 
 import "sudo"
 import "bashrc"
-#import "inputrc"
+import "inputrc"
 #import "ssh_etc_config"
 #import "groups"
 import "sources_list"

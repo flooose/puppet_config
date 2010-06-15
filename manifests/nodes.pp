@@ -11,6 +11,7 @@ node default {
     include sudo
     include somefile
     include apt_sources
+    include inputrc
 }
 
 # Blueprint for potential future nodes.
