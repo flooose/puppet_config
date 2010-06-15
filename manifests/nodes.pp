@@ -10,7 +10,7 @@ node default {
     include bashrc
     include sudo
     include somefile
-    include sources_list
+    include apt_sources
 }
 
 # Blueprint for potential future nodes.
