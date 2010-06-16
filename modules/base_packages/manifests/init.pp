@@ -72,7 +72,7 @@ class base_packages {
     package { "mysql-common/lenny-backports": ensure => installed, }
     package { "libmysqlclient16/lenny-backports": ensure => installed, }
     package { "mysql-client-5.1/lenny-backports": ensure => installed, }
-    package { "mysql-server-5.1/lenny-backports": ensure => installed, }
+    package { "mysql-server/lenny-backports": ensure => installed, }
 }
 
 /*    
