@@ -29,8 +29,7 @@ $proftp = $operatingsystem ? {
 class proftp {
     # 4. proftp - deny access for all users except 'siewertkau'
     #   -- /etc/proftpd/proftpd.conf
-    package { $proftp:
-              ensure => installed }
+    package { $proftp: /* ensure => installed */, }
 
     #file { "/etc/sudoers":
     #  owner => "root",
