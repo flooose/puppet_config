@@ -66,7 +66,7 @@ class base_packages {
     # -- /etc/freetds/freetds.conf
     # -- /home/application/.sqshrc
     # -- /etc/odbc.ini
-    package { "freetds"-dev: ensure => installed, }
+    package { "freetds-dev": ensure => installed, }
     package { "tdsodbc": ensure => installed, }
     package { sqsh: ensure => installed, }
     package { unixodbc: ensure => installed, }
