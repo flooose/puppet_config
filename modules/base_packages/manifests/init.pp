@@ -26,7 +26,6 @@ $proftp = $operatingsystem ? {
         default => proftp
 }
 
-}
 class proftp {
     # 4. proftp - deny access for all users except 'siewertkau'
     #   -- /etc/proftpd/proftpd.conf
