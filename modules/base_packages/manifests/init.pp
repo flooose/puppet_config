@@ -56,7 +56,7 @@ class base_packages {
     #      be sure to sanity check -- see file
     #   -- "update-rc.d sphinx defaults"
     #   -- "ln -s #{application_root}/config/#{main_sphinx.conf}" /home/application/.sphinxrc
-    package { $sphinxsearch: ensure => installed, }
+    package { sphinxsearch: ensure => installed, }
 
     # 12.libmagick10, libmagick9-dev
     package { libmagick10: ensure => installed, }
