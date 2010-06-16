@@ -46,17 +46,7 @@ class base_packages {
 
     # 11.sqlite3
     package { sqlite3: ensure => installed, }
-    package { sqlite3-dev: ensure => installed, }
-
-    # 7. sphinx search - custom build
-    #   -- see build howto
-    #   -- .deb package location: ${Production_Server}/home/chris/debs
-    #   -- /etc/init.d/sphinx -- makes hard coded references to the application, be sure to sanity check -- see file
-    #   -- /etc/defaults/sphinx -- makes hard coded references to the application,
-    #      be sure to sanity check -- see file
-    #   -- "update-rc.d sphinx defaults"
-    #   -- "ln -s #{application_root}/config/#{main_sphinx.conf}" /home/application/.sphinxrc
-    package { sphinxsearch: ensure => installed, }
+    package { libsqlite3-dev: ensure => installed, }
 
     # 12.libmagick10, libmagick9-dev
     package { libmagick10: ensure => installed, }
@@ -73,14 +63,15 @@ class base_packages {
     package { unixodbc-dev: ensure => installed, }
 
     # 15.libpcre3-dev
-    package { libprce3-dev: ensure => installed, }
+    package { libpcre3-dev: ensure => installed, }
 
     # 17.apache2-utils
     package { apache2-utils: ensure => installed, }
 
     # 18.libmysqlclient-dev
-    package { libmysqlclient-dev: ensure => installed, }
+    package { libmysqlclient15-dev: ensure => installed, }
 }
+
 /*    
     #
     #    16.New Relic
@@ -91,6 +82,16 @@ class nginx {
     #   -- see build howto
     #   -- .deb package location: ${Production_Server}/home/chris/debs
 }
+
+    # 7. sphinx search - custom build
+    #   -- see build howto
+    #   -- .deb package location: ${Production_Server}/home/chris/debs
+    #   -- /etc/init.d/sphinx -- makes hard coded references to the application, be sure to sanity check -- see file
+    #   -- /etc/defaults/sphinx -- makes hard coded references to the application,
+    #      be sure to sanity check -- see file
+    #   -- "update-rc.d sphinx defaults"
+    #   -- "ln -s #{application_root}/config/#{main_sphinx.conf}" /home/application/.sphinxrc
+    package { sphinxsearch: ensure => installed, }
 
 
 class mysql {
