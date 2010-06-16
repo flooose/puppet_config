@@ -69,7 +69,10 @@ class base_packages {
     package { apache2-utils: ensure => installed, }
 
     # 18.libmysqlclient-dev
-    package { libmysqlclient15-dev: ensure => installed, }
+    package { "mysql-common/lenny-backports": ensure => installed, }
+    package { "libmysqlclient16": ensure => installed, }
+    package { "mysql-client-5.1": ensure => installed, }
+    package { "mysql-server-5.1": ensure => installed, }
 }
 
 /*    
