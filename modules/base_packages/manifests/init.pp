@@ -70,13 +70,14 @@ class base_packages {
     # 17.apache2-utils
     package { apache2-utils: ensure => installed, }
 
+    # REWORK - backports aren't working
     # 18.libmysqlclient-dev
-    package { "libmysqlclient16/lenny-backports": ensure => installed, }
-    package { "mysql-client/lenny-backports": ensure => installed, }
-    package { "libmysqlclient-dev/lenny-backports": ensure => installed, }
-    package { "mysql-common/lenny-backports": ensure => installed, }
-    package { "mysql-server/lenny-backports": ensure => installed, }
-    package { "mysql-client-5.1/lenny-backports": ensure => installed, }
+    #package { "libmysqlclient16/lenny-backports": ensure => installed, }
+    #package { "mysql-client/lenny-backports": ensure => installed, }
+    #package { "libmysqlclient-dev/lenny-backports": ensure => installed, }
+    #package { "mysql-common/lenny-backports": ensure => installed, }
+    #package { "mysql-server/lenny-backports": ensure => installed, }
+    #package { "mysql-client-5.1/lenny-backports": ensure => installed, }
 
     # munin-node
     package { "munin-node": ensure => installed, }

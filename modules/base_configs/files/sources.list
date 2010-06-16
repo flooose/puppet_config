@@ -1,0 +1,15 @@
+# 
+# deb cdrom:[Debian GNU/Linux 5.0.3 _Lenny_ - Official amd64 NETINST Binary-1 20090906-11:59]/ lenny main
+
+#deb cdrom:[Debian GNU/Linux 5.0.3 _Lenny_ - Official amd64 NETINST Binary-1 20090906-11:59]/ lenny main
+
+deb http://ftp.de.debian.org/debian/ lenny main
+deb-src http://ftp.de.debian.org/debian/ lenny main
+
+deb http://security.debian.org/ lenny/updates main
+deb-src http://security.debian.org/ lenny/updates main
+
+deb http://volatile.debian.org/debian-volatile lenny/volatile main
+deb-src http://volatile.debian.org/debian-volatile lenny/volatile main
+
+deb http://www.backports.org/debian lenny-backports main contrib non-free

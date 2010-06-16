@@ -7,12 +7,16 @@
 # 4. /home/#{user}/.ssh/*
 # 5. ....
 node default {
-    include bashrc
-    include sudo
-    include somefile
-    include apt_sources
-    include inputrc
+    #include bashrc
+    #include sudo
+    #include somefile
+    #include apt_sources
+    #include inputrc
     include base_packages 
+    include base_configs
+    adva_users{"application": username => "application"}
+    adva_users("adva": username => "adva" )
+
 }
 
 # Blueprint for potential future nodes.

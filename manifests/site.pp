@@ -3,9 +3,6 @@
 import "modules"
 import "nodes"
 
-adva_users{"application": username => "application"}
-#adva_users("adva")
-
 ## We probably don't want this yet, since we don't know what
 #
 ## The filebucket option allows for file backups to the server
