@@ -71,11 +71,11 @@ class base_packages {
     package { apache2-utils: ensure => installed, }
 
     # 18.libmysqlclient-dev
+    package { "libmysqlclient16/lenny-backports": ensure => installed, }
     package { "mysql-client/lenny-backports": ensure => installed, }
     package { "libmysqlclient-dev/lenny-backports": ensure => installed, }
     package { "mysql-common/lenny-backports": ensure => installed, }
     package { "mysql-server/lenny-backports": ensure => installed, }
-    package { "libmysqlclient16/lenny-backports": ensure => installed, }
     package { "mysql-client-5.1/lenny-backports": ensure => installed, }
 
     # munin-node
