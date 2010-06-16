@@ -97,7 +97,7 @@ class mysql {
     # 5. mysql
     #    -- 5.1 from backports
     #      -- root password - same as system
-    package { mysql: /*FROM BACKPORTS!!!*/ }
+    package { mysql: FROM BACKPORTS!!! }
 
     # SETUP MYCNF MODULE
     #file { "/etc/sudoers":
