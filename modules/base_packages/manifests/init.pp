@@ -70,9 +70,9 @@ class base_packages {
 
     # 18.libmysqlclient-dev
     package { "mysql-common/lenny-backports": ensure => installed, }
-    package { "libmysqlclient16": ensure => installed, }
-    package { "mysql-client-5.1": ensure => installed, }
-    package { "mysql-server-5.1": ensure => installed, }
+    package { "libmysqlclient16/lenny-backports": ensure => installed, }
+    package { "mysql-client-5.1/lenny-backports": ensure => installed, }
+    package { "mysql-server-5.1/lenny-backports": ensure => installed, }
 }
 
 /*    
