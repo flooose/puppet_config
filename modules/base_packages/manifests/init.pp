@@ -81,7 +81,7 @@ class base_packages {
     # 18.libmysqlclient-dev
     package { libmysqlclient-dev: ensure => installed, }
 }
-    
+/*    
     #
     #    16.New Relic
     #      -- sudo gem install newrelic_rpm
@@ -120,7 +120,6 @@ class ruby_ee {
 #      -- "update-rc.d god defaults"
 #      -- "ln -s #{appication_root}/#{main_god.god}" /home/application/.godrc
 
-/*
 class postfix {
 #    19.postfix
 }
