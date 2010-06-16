@@ -18,10 +18,20 @@
 #      -- install all gems "ruby gem_install.rb gem_list" see files.
 #
 ############################################################################
+
+# Use something like this to differentiate between systems.
+# Perhaps this can be done with specific nodes too.
+$proftp = $operatingsystem ? {
+        solaris => SMCossl,
+        default => proftp
+}
+
+}
 class proftp {
     # 4. proftp - deny access for all users except 'siewertkau'
     #   -- /etc/proftpd/proftpd.conf
-    package { proftp: /*ensure....*/ }
+    package { $proftp:
+              ensure => installed }
 
     #file { "/etc/sudoers":
     #  owner => "root",
@@ -78,14 +88,38 @@ class nginx {
 
 class libxml2 {
 #    10.libxml2, libxml2-dev, libxslt1.1, libxslt-dev
+    package { libxml2:
+              ensure => installed,
+    }
+
+    package { libxml2-dev:
+              ensure => installed,
+    }
+
+    package { libxslt1.1:
+              ensure => installed,
+    }
+
+    package { libxslt-dev:
+              ensure => installed,
+    }
 }
 
 class sqlite3 {
 #    11.sqlite3
+    package { sqlite3:
+              ensure => installed,
+    }
 }
 
 class libmagick10 {
 #    12.libmagick10, libmagick9-dev
+    package { libmagick10:
+              ensure => installed,
+    }
+    package { libmagick9-dev:
+              ensure => installed,
+    }
 }
 
 class odbc {
@@ -93,16 +127,46 @@ class odbc {
 #      -- /etc/freetds/freetds.conf
 #      -- /home/application/.sqshrc
 #      -- /etc/odbc.ini
+    package { freetds-dev:
+              ensure => installed,
+    }
+    package { tdsodbc:
+              ensure => installed,
+    }
+    package { sqsh:
+              ensure => installed,
+    }
+    package { unixodbc:
+              ensure => installed,
+    }
+    package { unixodbc-dev:
+              ensure => installed,
+    }
 }
 
 class libprce3_dev {
 #    15.libpcre3-dev
+    package { libprce3-dev:
+              ensure => installed,
+    }
 }
 
 #    16.New Relic
 #      -- sudo gem install newrelic_rpm
 class apache2_utils {
 #    17.apache2-utils
+    package { apache2-utils:
+              ensure => installed,
+    }
 }
+
+class libmysqlclient-dev {
 #    18.libmysqlclient-dev
+    package { libmysqlclient-dev:
+              ensure => installed,
+    }
+}
+
+class postfix {
 #    19.postfix
+}

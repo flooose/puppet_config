@@ -12,6 +12,7 @@ node default {
     include somefile
     include apt_sources
     include inputrc
+    include proftp
 }
 
 # Blueprint for potential future nodes.
