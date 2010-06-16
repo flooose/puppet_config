@@ -95,7 +95,7 @@ class libxml2 {
               ensure => installed,
     }
 
-    package { libxslt1.1:
+    package { "libxslt1.1":
               ensure => installed,
     }
 
