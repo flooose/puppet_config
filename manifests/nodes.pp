@@ -15,7 +15,7 @@ node default {
     include base_packages 
     include base_configs
     adva_users{"application": username => "application"}
-    adva_users("adva": username => "adva" )
+    adva_users{"adva": username => "adva" }
 
 }
 

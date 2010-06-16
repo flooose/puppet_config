@@ -1,0 +1,7 @@
+capistrano
+capistrano-ext
+rake
+god
+delayed-job
+passenger
+puppet (already installed)
