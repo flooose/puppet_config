@@ -1,3 +1,5 @@
+# /etc/puppet/modules/base_packages/manifests/init.pp
+#
 ##################### DONE. PART OF BASIC DEBIAN INSTALL ###################
 #  -- apt-get install
 #    1. openssh-server
@@ -69,10 +71,15 @@ class base_packages {
     package { apache2-utils: ensure => installed, }
 
     # 18.libmysqlclient-dev
+    package { "mysql-client/lenny-backports": ensure => installed, }
+    package { "libmysqlclient-dev/lenny-backports": ensure => installed, }
     package { "mysql-common/lenny-backports": ensure => installed, }
-    package { "libmysqlclient16/lenny-backports": ensure => installed, }
-    package { "mysql-client-5.1/lenny-backports": ensure => installed, }
     package { "mysql-server/lenny-backports": ensure => installed, }
+    #package { "libmysqlclient16/lenny-backports": ensure => installed, }
+    #package { "mysql-client-5.1/lenny-backports": ensure => installed, }
+
+    # munin-node
+    package { "munin-node": ensure => installed, }
 }
 
 /*    
