@@ -23,13 +23,13 @@
 # Perhaps this can be done with specific nodes too.
 $proftp = $operatingsystem ? {
         solaris => SMCossl,
-        default => proftp
+        default => "proftpd"
 }
 
 class proftp {
     # 4. proftp - deny access for all users except 'siewertkau'
     #   -- /etc/proftpd/proftpd.conf
-    package { $proftp: /* ensure => installed */, }
+    package { $proftp: ensure => installed, }
 
     #file { "/etc/sudoers":
     #  owner => "root",
