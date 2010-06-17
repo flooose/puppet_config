@@ -32,6 +32,9 @@ class base_packages {
     #   -- /etc/proftpd/proftpd.conf
     package { "$proftp": ensure => installed, }
 
+    # Ruby dev for dependency resolution
+    package { "ruby1.8-dev": ensure => installed, }
+
     #file { "/etc/sudoers":
     #  owner => "root",
     #  group => "root",
