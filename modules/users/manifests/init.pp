@@ -5,6 +5,7 @@ define adva_users($username){
     user { "$username": name => "$username",
                       gid    => "$username",
     #       manages_passwords => true,
+           manages_homedir   => true,
                     password => '',
                        shell => bash,
     }
