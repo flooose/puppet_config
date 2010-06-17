@@ -1,0 +1,29 @@
+Host sk1
+  HostName 192.168.111.120
+  Port 42022
+  User adva
+
+Host sk1_app
+  HostName 192.168.111.120
+  Port 42022
+  User application
+
+Host sk2
+  HostName 192.168.111.121
+  Port 42022
+  User adva
+
+Host sk2_app
+  HostName 192.168.111.121
+  Port 42022
+  User application
+
+Host sktest
+  HostName 192.168.111.125
+  Port 42022
+  User adva
+
+Host sktest_app
+  HostName 192.168.111.125
+  Port 42022
+  User application
