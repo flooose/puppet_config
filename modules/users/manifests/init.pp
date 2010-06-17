@@ -9,7 +9,6 @@ define adva_users($username){
         password        => '',
         shell           => "/bin/bash",
         ensure          => present,
-        require         => Group["$username"]
     }
 
     file { "/home/$username/.ssh":
