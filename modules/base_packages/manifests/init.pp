@@ -30,7 +30,7 @@ class base_packages {
     }
     # 4. proftp - deny access for all users except 'siewertkau'
     #   -- /etc/proftpd/proftpd.conf
-    package { $proftp: ensure => installed, }
+    package { "$proftp": ensure => installed, }
 
     #file { "/etc/sudoers":
     #  owner => "root",
@@ -41,18 +41,18 @@ class base_packages {
     #}
 
     # 10.libxml2, libxml2-dev, libxslt1.1, libxslt-dev
-    package { libxml2: ensure => installed, }
-    package { libxml2-dev: ensure => installed, }
+    package { "libxl2": ensure => installed, }
+    package { "libxml2"-dev: ensure => installed, }
     package { "libxslt1.1": ensure => installed, }
-    package { libxslt-dev: ensure => installed, }
+    package { "libxslt"-dev: ensure => installed, }
 
     # 11.sqlite3
-    package { sqlite3: ensure => installed, }
-    package { libsqlite3-dev: ensure => installed, }
+    package { "sqlite3": ensure => installed, }
+    package { "libsqlite3-dev": ensure => installed, }
 
     # 12.libmagick10, libmagick9-dev
-    package { libmagick10: ensure => installed, }
-    package { libmagick9-dev: ensure => installed, }
+    package { "libmagick10": ensure => installed, }
+    package { "libmagick9-dev": ensure => installed, }
 
     # 14.freetds-dev tdsodbc sqsh unixodbc unixodbc-dev
     # -- /etc/freetds/freetds.conf
@@ -60,15 +60,15 @@ class base_packages {
     # -- /etc/odbc.ini
     package { "freetds-dev": ensure => installed, }
     package { "tdsodbc": ensure => installed, }
-    package { sqsh: ensure => installed, }
-    package { unixodbc: ensure => installed, }
-    package { unixodbc-dev: ensure => installed, }
+    package { "sqsh": ensure => installed, }
+    package { "unixodbc": ensure => installed, }
+    package { "unixodbc-dev": ensure => installed, }
 
     # 15.libpcre3-dev
-    package { libpcre3-dev: ensure => installed, }
+    package { "libpcre3-dev": ensure => installed, }
 
     # 17.apache2-utils
-    package { apache2-utils: ensure => installed, }
+    package { "apache2-utils": ensure => installed, }
 
     # REWORK - backports aren't working
     # 18.libmysqlclient-dev
