@@ -1,7 +1,7 @@
 # /etc/puppet/modules/users/manifests/init.pp
 
 # TODO: Are users created without passwords?
-define user($username){
+define adva_users($username){
     user { "$username": name => "$username",
                       groups => "$username",
            manages_passwords => true,
