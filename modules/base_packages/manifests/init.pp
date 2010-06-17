@@ -84,6 +84,14 @@ class base_packages {
 
     # munin-node
     package { "munin-node": ensure => installed, }
+
+    # dev libraries for Ruby Enterprise
+    package {
+        "libssl-dev":
+            ensure => installed;
+        "libreadline-dev":
+            ensure => installed;
+    }
 }
 
 /*    
