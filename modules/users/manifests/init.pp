@@ -3,15 +3,21 @@
 # TODO: Are users created without passwords?
 define adva_users($username){
     user { "$username": name => "$username",
-                      groups => "$username",
+                      gid    => "$username",
            manages_passwords => true,
                     password => '',
                        shell => bash,
     }
+
+    file { "/home/$username/.ssh":
+        ensure  => directory,
+        group   => "$username",
+        owner   => "$username",
+        mode    => "755",
+    }
     
     file { "/home/$username/.ssh/authorized_keys":
         ensure  => file,
-        recurse => true,
         group   => "$username",
         owner   => "$username",
         mode    => "644",
