@@ -14,7 +14,7 @@ node default {
 }
 
 # Blueprint for potential future nodes.
-node 'b2c.test' inherits default {
+node 'ext-b2c-sk-test' inherits default {
     include gems
     adva_users{"application": username => "application"}
 }
