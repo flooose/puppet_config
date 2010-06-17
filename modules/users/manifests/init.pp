@@ -7,7 +7,7 @@ define adva_users($username){
         managehome      => true,
         home            => "/home/$username",
         password        => '',
-        shell           => bash,
+        shell           => "/bin/bash",
     }
 
     file { "/home/$username/.ssh":
