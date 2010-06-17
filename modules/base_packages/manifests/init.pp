@@ -42,9 +42,9 @@ class base_packages {
 
     # 10.libxml2, libxml2-dev, libxslt1.1, libxslt-dev
     package { "libxl2": ensure => installed, }
-    package { "libxml2"-dev: ensure => installed, }
+    package { "libxml2-dev": ensure => installed, }
     package { "libxslt1.1": ensure => installed, }
-    package { "libxslt"-dev: ensure => installed, }
+    package { "libxslt-dev": ensure => installed, }
 
     # 11.sqlite3
     package { "sqlite3": ensure => installed, }
