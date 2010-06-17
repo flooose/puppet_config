@@ -8,6 +8,7 @@ define adva_users($username){
         home            => "/home/$username",
         password        => '',
         shell           => "/bin/bash",
+        ensure          => present,
     }
 
     file { "/home/$username/.ssh":
