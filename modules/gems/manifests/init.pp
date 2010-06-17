@@ -1,4 +1,6 @@
-class {
+# /etc/puppet/modules/gems/manifests/init.pp
+
+class gems {
     package { 
         "god":
             provider => gem,
