@@ -2,6 +2,11 @@
 
 # TODO: Are users created without passwords?
 define adva_users($username){
+    group { "$username":
+        name            => "$username",
+        ensure          => present,
+    }
+
     user { "$username": name => "$username",
         gid             => "$username",
         managehome      => true,
