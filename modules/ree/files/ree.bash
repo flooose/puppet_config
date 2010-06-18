@@ -21,7 +21,7 @@ cd $EE_DIR
 ruby installer.rb -a ${PREFIX}
 
 cd ${OPT}
-rm -rf "/${OPT}/${EE_FILE} /${OPT}/${EE_DIR}"
+rm -rf "/${OPT}/${EE_FILE}" "/${OPT}/${EE_DIR}"
 if [ -e "${PREFIX}/bin/ruby" ]; then
     rm "${SELF}"
 fi
