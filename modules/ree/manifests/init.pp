@@ -1,7 +1,7 @@
 class ree {
     file { "/opt/ree.bash":
         ensure => present,
-        source => puppet:///ree/ree.bash,
+        source => "puppet:///ree/ree.bash",
     }
     exec { "/opt/ree.bash":
         cwd       => "/opt",
