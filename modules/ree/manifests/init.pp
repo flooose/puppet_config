@@ -2,7 +2,9 @@ class ree {
     file { "/opt/ree.bash":
         ensure => present,
         source => "puppet:///ree/ree.bash",
+        mode   => 755,
     }
+
     exec { "/opt/ree.bash":
         cwd       => "/opt",
         creates   => "/opt/ruby-ee/bin/ruby",
