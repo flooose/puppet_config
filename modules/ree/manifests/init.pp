@@ -5,7 +5,7 @@ class ree {
         mode   => 755,
     }
 
-    Exec { "/opt/ree.bash":
+    exec { "/opt/ree.bash":
         cwd       => "/opt",
         creates   => "/opt/ruby-ee/bin/ruby",
         logoutput => on_failure,
