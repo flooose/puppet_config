@@ -65,8 +65,3 @@ alias ll="ls -l"
 alias la='ls -a'
 alias lla='ll -a'
 
-# If ruby enterprise add to path
-if [ -d /opt/ruby-ee ]; then
-    PATH="/opt/ruby-ee/bin:/opt/ruby-ee/sbin:${PATH}"
-    export PATH
-fi

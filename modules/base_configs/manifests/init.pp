@@ -4,6 +4,9 @@ class base_configs {
   # System-wide bash config
   file { "/etc/bash.bashrc": source  => "puppet:///base_configs/bash.bashrc", }
 
+  # System-wide profile config
+  file { "/etc/profile": source  => "puppet:///base_configs/profile", }
+
   # inputrc for the coveted history-search-backward
   file { "/etc/inputrc": source  => "puppet:///base_configs/inputrc", }
 
