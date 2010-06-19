@@ -1,9 +1,9 @@
 class nginx {
     file {
         "/etc/init.d/nginx":
-            source => "puppet:///passenger_nginx/init.d/nginx";
+            source => "puppet:///nginx/init.d/nginx";
         "/etc/default/nginx":
-            source => "puppet:///passenger_nginx/logrotate.d/nginx";
+            source => "puppet:///nginx/logrotate.d/nginx";
     }
 
     exec { "/opt/ruby-ee/bin/passenger-install-nginx-module --auto --prefix=/opt/nginx --auto-download":
