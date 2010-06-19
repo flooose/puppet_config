@@ -7,10 +7,11 @@
 # 4. /home/#{user}/.ssh/*
 # 5. ....
 node default {
+    include puppet
     include base_packages 
     include base_configs
-    adva_users{"adva": username => "adva" }
-
+    adva_users{"adva": username => "adva"
+    }
 }
 
 # Blueprint for potential future nodes.
