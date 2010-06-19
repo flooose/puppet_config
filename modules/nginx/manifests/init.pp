@@ -7,7 +7,7 @@ class nginx {
     }
 
     exec { "/opt/ruby-ee/bin/passenger-install-nginx-module --auto --prefix=/opt/nginx --auto-download":
-        require   => Exec["/opt/ree.bash"]
+        require   => Exec["/opt/ree.bash"],
         cwd       => "/opt",
         creates   => "/opt/nginx",
         logoutput => on_failure,
