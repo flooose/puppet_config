@@ -4,7 +4,7 @@ class puppet_client {
             ensure  => present,
             owner   => "root",
             group   => "root",
-            mode    => 644,
+            mode    => 755,
             source  => "puppet:///puppet_client/init.d/puppet";
         "/etc/default/puppet":
             ensure  => present,
