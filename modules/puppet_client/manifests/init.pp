@@ -18,7 +18,7 @@ class puppet_client {
             group   => "root",
             mode    => 644,
             source  => "puppet:///puppet_client/logrotate.d/puppet";
-        "/etc/logcheck.d.ignore/puppet":
+        "/etc/logcheck/ignore.d.server/puppet":
             ensure  => present,
             owner   => "root",
             group   => "root",
