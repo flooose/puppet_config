@@ -7,6 +7,11 @@ EE_DIR="ruby-enterprise-1.8.7-2010.02"
 OPT="/opt"
 PREFIX="/opt/ruby-ee"
 
+if [ -e "${PREFIX}/bin/ruby" ]; then
+    rm "${SELF}"
+    exit 0
+fi
+
 cd ${OPT}
 
 if [ -e ${EE_FILE} ]; then
