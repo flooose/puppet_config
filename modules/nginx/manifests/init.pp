@@ -1,9 +1,17 @@
 class nginx {
     file {
         "/etc/init.d/nginx":
-            source => "puppet:///nginx/init.d/nginx";
+            ensure  => present,
+            owner   => "root",
+            group   => "root",
+            mode    => 644,
+            source  => "puppet:///nginx/init.d/nginx";
         "/etc/logrotate.d/nginx":
-            source => "puppet:///nginx/logrotate.d/nginx";
+            ensure  => present,
+            owner   => "root",
+            group   => "root",
+            mode    => 644,
+            source  => "puppet:///nginx/logrotate.d/nginx";
     }
 
     exec { "/opt/ruby-ee/bin/passenger-install-nginx-module --auto --prefix=/opt/nginx --auto-download":
@@ -21,4 +29,5 @@ class nginx {
         enable     => true,
         require    => Exec["/opt/ruby-ee/bin/passenger-install-nginx-module --auto --prefix=/opt/nginx --auto-download"],
     }
+
 }

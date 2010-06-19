@@ -21,8 +21,8 @@ task :install => [:build_directories, :copy_files, :set_permissions, :add_passwd
 end
 
 task :build_directories do |t|
-  puts "mkdir /etc/puppet: success" unless `sudo mkdir #{pid_dir}`
-  puts "mkdir /etc/puppet: success" unless `sudo mkdir -p #{logcheck_dir}`
+#  puts "mkdir /etc/puppet: success" unless `sudo mkdir #{pid_dir}`
+#  puts "mkdir /etc/puppet: success" unless `sudo mkdir -p #{logcheck_dir}`
 end
 
 task :copy_files do
