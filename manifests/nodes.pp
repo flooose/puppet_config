@@ -17,6 +17,7 @@ node default {
 node 'ext-b2c-sk-test' inherits default {
     include gems
     include ree
+    include nginx
     adva_users{"application": username => "application"}
 }
 
