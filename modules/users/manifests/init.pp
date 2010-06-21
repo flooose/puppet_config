@@ -13,7 +13,6 @@ define adva_users($username, $password){
         gid              => "$username",
         managehome       => true,
         home             => "/home/$username",
-        password         => '',
         shell            => "/bin/bash",
         ensure           => present,
     }
