@@ -9,7 +9,7 @@ define adva_users($username, $password){
 
     user { "$username": name => "$username",
         manages_password => true,
-        password         => $password
+        password         => $password,
         gid              => "$username",
         managehome       => true,
         home             => "/home/$username",
