@@ -10,8 +10,7 @@ node default {
     include puppet_client
     include base_packages 
     include base_configs
-    adva_users{"adva": username => "adva"
-    }
+    #adva_users{"adva": username => "adva" }
 }
 
 # Blueprint for potential future nodes.
@@ -19,7 +18,10 @@ node 'ext-b2c-sk-test' inherits default {
     include gems
     include ree
     include nginx
-    adva_users{"application": username => "application"}
+    adva_users{"application":
+        username => "application",
+        password => '$1$xIhbVD2M$g4lIuxGiSb/rNS8TbyUfM1',
+    }
 }
 
 # Test node for sktest
