@@ -150,9 +150,3 @@ Host b2ctest
   HostName 193.159.180.26
   Port 42021
   User adva
-
-Host appb2ctest
-  HostName 193.159.180.26
-  Port 42021
-  User application
-

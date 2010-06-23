@@ -22,6 +22,6 @@ node 'ext-b2c-sk-test' inherits default {
 }
 
 # Test node for sktest
-node 'ext-con-sk-test.siewert-und-kau' inherits default{
+node 'ext-con-sk-test.siewert-und-kau' {
 
 }
