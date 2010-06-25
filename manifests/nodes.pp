@@ -1,16 +1,22 @@
 # /etc/puppet/manifests/nodes.pp
 
-# What all nodes include. Here we should have:
-# 1. /etc/bash.bashrc
-# 2. /etc/inputrc
-# 3. /home/#{user}/.bashrc
-# 4. /home/#{user}/.ssh/*
-# 5. ....
+# TODO: refactor default so that it's more minimal. This also means
+# refactoring base_backages and base_configs, but default should only
+# include:
+# 1. puppet_client
+# 2. base_configs
+# 3. base_packages
 node default {
     include puppet_client
     include base_packages 
     include base_configs
     adva_users{"adva": username => "adva",}
+}
+
+# The puppetmasterd node should inherit default and then have
+# directives specific to being a master.
+node 'servercharlie.bestgroup' {
+    include puppet_client
 }
 
 # Blueprint for potential future nodes.
