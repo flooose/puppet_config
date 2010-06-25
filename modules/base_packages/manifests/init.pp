@@ -35,14 +35,6 @@ class base_packages {
     # Ruby dev for dependency resolution
     package { "ruby1.8-dev": ensure => installed, }
 
-    #file { "/etc/sudoers":
-    #  owner => "root",
-    #  group => "root",
-    #  mode  => 440,
-    #  source  => "puppet:///sudo/sudoers",
-    #  require => Package["sudo"],
-    #}
-
     # 10.libxml2, libxml2-dev, libxslt1.1, libxslt-dev
     package { "libxml2": ensure => installed, }
     package { "libxml2-dev": ensure => installed, }
@@ -99,12 +91,6 @@ class base_packages {
     #    16.New Relic
     #      -- sudo gem install newrelic_rpm
 
-class nginx {
-    # 8. nginx - custom build
-    #   -- see build howto
-    #   -- .deb package location: ${Production_Server}/home/chris/debs
-}
-
     # 7. sphinx search - custom build
     #   -- see build howto
     #   -- .deb package location: ${Production_Server}/home/chris/debs
@@ -130,11 +116,6 @@ class mysql {
     #  source  => "puppet:///sudo/sudoers",
     #  require => Package["sudo"],
     #}
-}
-
-class ruby_ee {
-    # 6. rubyenterprise
-    # RESEARCH CUSTOM PACKAGES
 }
 
 #    9. god - installed with gems
