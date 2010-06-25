@@ -24,6 +24,12 @@ class puppet_client {
             group   => "root",
             mode    => 644,
             source  => "puppet:///puppet_client/logcheck/ignore.d.server/puppet";
+        "/etc/puppet/puppet.conf":
+            ensure  => present,
+            owner   => "root",
+            group   => "root",
+            mode    => 644,
+            source  => "puppet:///puppet_client/puppet/puppet.conf";
     }
 
 #    service { 'puppet':

@@ -17,7 +17,7 @@ Defaults	env_reset
 root	ALL=(ALL) ALL
 adva	ALL=(ALL) ALL
 
-application           ALL=NOPASSWD: /usr/bin/unlink, /bin/ln, /usr/bin/bluepill, /usr/bin/god, /usr/bin/git, /usr/bin/gem
+application           ALL=NOPASSWD: /etc/init.d/nginx, /usr/bin/unlink, /bin/ln, /usr/bin/bluepill, /usr/bin/god, /usr/bin/git, /usr/bin/gem
 adva           ALL=NOPASSWD: /usr/bin/bluepill, /usr/bin/god, /usr/bin/git, /usr/bin/gem
 # Uncomment to allow members of group sudo to not need a password
 # (Note that later entries override this, so you might need to move
