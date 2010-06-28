@@ -12,6 +12,7 @@ node default {
 # directives specific to being a master.
 node 'servercharlie.bestgroup' {
     include puppet_client
+    adva_users{"puppet-admin": username => "puppet-admin",}
 }
 
 # TODO: change this node name to be a regex for all s-k
@@ -27,6 +28,7 @@ node 'ext-b2c-sk-test' inherits default {
 }
 
 # Test node for sktest
-node 'ext-con-sk-test.siewert-und-kau' {
+node 'ext-con-sk-test' {
+    include puppet_client
 
 }

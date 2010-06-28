@@ -9,7 +9,7 @@
 ### END INIT INFO                                                                                                                                          
 
 PATH=/opt/ruby-ee187/sbin:/opt/ruby-ee187/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-DAEMON=/usr/sbin/puppetd
+DAEMON=/opt/ruby-ee/sbin/puppetd
 DAEMON_OPTS=""
 NAME=puppetd
 DESC="puppet configuration management tool"
@@ -21,24 +21,24 @@ test -x $DAEMON || exit 0
 . /lib/lsb/init-functions
 
 reload_puppet() {
-	start-stop-daemon --stop --quiet --signal HUP --pidfile /var/run/puppet/$NAME.pid
+	start-stop-daemon --stop --quiet --signal HUP --pidfile /var/lib/puppet/run/$NAME.pid
 }
 
 start_puppet() {
-	start-stop-daemon --start --quiet --pidfile /var/run/puppet/$NAME.pid \
+	start-stop-daemon --start --quiet --pidfile /var/lib/puppet/run/$NAME.pid \
 		--startas $DAEMON -- $DAEMON_OPTS
 }
 
 stop_puppet() {
-	start-stop-daemon --stop --quiet --pidfile /var/run/puppet/$NAME.pid
+	start-stop-daemon --stop --quiet --pidfile /var/lib/puppet/run/$NAME.pid
 }
 
-if [ ! -d /var/run/puppet ]; then
-	rm -rf /var/run/puppet
-	mkdir -p /var/run/puppet
+if [ ! -d /var/lib/puppet/run ]; then
+	rm -rf /var/lib/puppet/run
+	mkdir -p /var/lib/puppet/run
 fi
 
-chown puppet:puppet /var/run/puppet
+chown puppet:puppet /var/lib/puppet/run
 
 case "$1" in
     start)

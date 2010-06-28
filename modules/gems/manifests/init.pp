@@ -8,5 +8,8 @@ class gems {
         "rake":
             provider => gem,
             ensure => installed;
+	"rails":
+            provider => gem,
+            #ensure => "--pre";
     }
 }
