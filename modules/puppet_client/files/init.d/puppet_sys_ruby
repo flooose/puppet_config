@@ -9,7 +9,7 @@
 ### END INIT INFO                                                                                                                                          
 
 PATH=/opt/ruby-ee187/sbin:/opt/ruby-ee187/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-DAEMON=/opt/ruby-ee/sbin/puppetd
+DAEMON=/usr/sbin/puppetd
 DAEMON_OPTS=""
 NAME=puppetd
 DESC="puppet configuration management tool"

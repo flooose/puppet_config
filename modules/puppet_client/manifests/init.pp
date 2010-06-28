@@ -1,11 +1,24 @@
 class puppet_client {
+    if $hostname =~ /^(S|s)erver(C|c)harlie.*/ {
+        file {
+            "/etc/init.d/puppet":
+                ensure  => present,
+                owner   => "root",
+                group   => "root",
+                mode    => 755,
+                source  => "puppet:///puppet_client/init.d/puppet_sys_ruby";
+	}
+    } else {
+        file {
+            "/etc/init.d/puppet":
+                ensure  => present,
+                owner   => "root",
+                group   => "root",
+                mode    => 755,
+                source  => "puppet:///puppet_client/init.d/puppet_ree";
+        }
+    }
     file {
-        "/etc/init.d/puppet":
-            ensure  => present,
-            owner   => "root",
-            group   => "root",
-            mode    => 755,
-            source  => "puppet:///puppet_client/init.d/puppet";
         "/etc/default/puppet":
             ensure  => present,
             owner   => "root",
