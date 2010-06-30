@@ -1,0 +1,83 @@
+Package: mysql-server
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: mysql-server
+Pin: release a=stable
+Pin-Priority: 650
+
+Package: mysql-client
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: mysql-client
+Pin: release a=stable
+Pin-Priority: 20
+
+Package: libmysqlclient16
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: libmysqlclient16
+Pin: release a=stable
+Pin-Priority: 650
+
+Package: libmysqlclient-dev
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: libmysqlclient-dev
+Pin: release a=stable
+Pin-Priority: 650
+
+Package: mysql-common
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: mysql-common
+Pin: release a=stable
+Pin-Priority: 20
+
+Package: postgresql
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: postgresql-client-common
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: postgresql-client-8.4
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: postgresql-common
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: postgresql-8.4
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: postgresql
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: postgresql-server-dev-8.4
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: pgadmin3
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: pgfouine
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: pgloader
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: libpq-dev
+Pin: release a=lenny-backports
+Pin-Priority: 700

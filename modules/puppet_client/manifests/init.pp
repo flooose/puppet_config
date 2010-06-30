@@ -7,7 +7,7 @@ class puppet_client {
                 group   => "root",
                 mode    => 755,
                 source  => "puppet:///puppet_client/init.d/puppet_sys_ruby";
-	}
+        }
     } else {
         file {
             "/etc/init.d/puppet":
@@ -18,6 +18,7 @@ class puppet_client {
                 source  => "puppet:///puppet_client/init.d/puppet_ree";
         }
     }
+
     file {
         "/etc/default/puppet":
             ensure  => present,
@@ -45,10 +46,10 @@ class puppet_client {
             source  => "puppet:///puppet_client/puppet/puppet.conf";
     }
 
-#    service { 'puppet':
-#        ensure     => running,
-#        enable     => true,
+    service { 'puppet':
+        ensure     => running,
+        enable     => true,
 #        require    => Exec["/opt/ruby-ee/bin/passenger-install-nginx-module --auto --prefix=/opt/nginx --auto-download"],
-#    }
+    }
 
 }

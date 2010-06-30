@@ -33,3 +33,10 @@ class base_configs {
             source  => "puppet:///base_configs/ssh_config",
     }
 }
+
+class b2c_base_configs {
+    file {
+        "/etc/apt/preferences":
+            source => "puppet:///base_configs/apt/preferences_b2c";
+    }
+}

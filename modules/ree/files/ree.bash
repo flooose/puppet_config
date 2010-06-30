@@ -27,6 +27,8 @@ ruby installer.rb -a ${PREFIX}
 
 cd ${OPT}
 rm -rf "/${OPT}/${EE_FILE}" "/${OPT}/${EE_DIR}"
+
 if [ -e "${PREFIX}/bin/ruby" ]; then
+    mkdir -p "${PREFIX}/sbin"
     rm "${SELF}"
 fi

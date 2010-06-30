@@ -21,6 +21,7 @@ node 'servercharlie.bestgroup' {
 # and refactor base_packages to sk_base_packages, i.e. only
 # those packages commen to all of s-k
 node 'ext-b2c-sk-test' inherits default {
+    include b2c_base_configs
     include b2c_test
     include sk_base
     include gems_sk_all
@@ -33,5 +34,5 @@ node 'ext-b2c-sk-test' inherits default {
 # Test node for sktest
 node 'ext-con-sk-test' {
     include puppet_client
-
+    include ree
 }
