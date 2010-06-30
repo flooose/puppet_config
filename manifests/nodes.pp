@@ -20,7 +20,7 @@ node 'servercharlie.bestgroup' {
 # and refactor base_packages to sk_base_packages, i.e. only
 # those packages commen to all of s-k
 node 'ext-b2c-sk-test' inherits default {
-    include base_packages
+    include sk_base
     include gems
     include ree
     include nginx

@@ -14,14 +14,39 @@
 #    4. ruby
 #    5. puppet
 #    6. rubygems - custom build
-#      -- see build howto
-#      -- .deb package location: ${Production_Server}/home/chris/debs
-#      -- after install "ln -s /usr/bin/gem1.8 /usr/bin/gem
-#      -- install all gems "ruby gem_install.rb gem_list" see files.
 #
 ############################################################################
 
-class base_packages {
+class base_all {
+    package {
+        "screen":
+            ensure => installed;
+        "fakeroot":
+            ensure => installed;
+        "ruby":
+            ensure => installed;
+        "git":
+            ensure => installed;
+        "git-core":
+            ensure => installed;
+        "sudo":
+            ensure => installed;
+        "rubygems":
+            ensure => installed;
+        "wget":
+            ensure => installed;
+        "build-essential":
+            ensure => installed;
+        "ruby1.8-dev":
+            ensure => installed;
+        "openssh-server":
+            ensure => installed;
+        "vim-nox":
+            ensure => installed;
+    }
+}
+
+class sk_base {
     # Use something like this to differentiate between systems.
     # Perhaps this can be done with specific nodes too.
     $proftp = $operatingsystem ? {
@@ -31,9 +56,6 @@ class base_packages {
     # 4. proftp - deny access for all users except 'siewertkau'
     #   -- /etc/proftpd/proftpd.conf
     package { "$proftp": ensure => installed, }
-
-    # Ruby dev for dependency resolution
-    package { "ruby1.8-dev": ensure => installed, }
 
     # 10.libxml2, libxml2-dev, libxslt1.1, libxslt-dev
     package { "libxml2": ensure => installed, }
