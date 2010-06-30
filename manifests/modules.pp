@@ -1,6 +1,6 @@
 # /etc/puppet/manifests/modules.pp
 
-import "base_packages"
+import "sk_base"
 import "base_configs"
 import "users"
 import "gems"

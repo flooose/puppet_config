@@ -4,9 +4,9 @@ import "modules"
 import "nodes"
 
 ## We probably don't want this yet, since we don't know what
+## it does.
 #
 ## The filebucket option allows for file backups to the server
-## it does.
 #filebucket { main: server => 'my.server.name' }
 #
 ## Set global defaults - including backing up all files to the main filebucket and adds a global path

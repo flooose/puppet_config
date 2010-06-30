@@ -65,3 +65,4 @@ alias ll="ls -l"
 alias la='ls -a'
 alias lla='ll -a'
 
+alias vim='vim -p'

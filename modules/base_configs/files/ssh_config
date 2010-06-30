@@ -150,3 +150,8 @@ Host b2ctest
   HostName 193.159.180.26
   Port 42021
   User adva
+
+Host puppet
+  HostName 193.159.180.41
+  Port 42022
+  User puppet-admin
