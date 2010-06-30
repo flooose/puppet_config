@@ -5,6 +5,7 @@
 node default {
     include puppet_client
     include base_configs
+    include base_all
     adva_users{"adva": username => "adva",}
 }
 
@@ -20,8 +21,10 @@ node 'servercharlie.bestgroup' {
 # and refactor base_packages to sk_base_packages, i.e. only
 # those packages commen to all of s-k
 node 'ext-b2c-sk-test' inherits default {
+    include b2c_test
     include sk_base
-    include gems
+    include gems_sk_all
+    include gems_b2c_base
     include ree
     include nginx
     adva_users{"application": username => "application",}

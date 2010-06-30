@@ -46,6 +46,27 @@ class base_all {
     }
 }
 
+class b2c_test{
+    package{
+        "libpq5":
+            ensure => installed;
+        "postgresql-client-common":
+            ensure => installed;
+        "postgresql-client-8.4":
+            ensure => installed;
+        "postgresql-common":
+            ensure => installed;
+        "postgresql-8.4":
+            ensure => installed;
+        "postgresql":
+            ensure => installed;
+        "postgresql-server-dev-8.4":
+            ensure => installed;
+        "libpq-dev":
+            ensure => installed;
+    }
+}
+
 class sk_base {
     # Use something like this to differentiate between systems.
     # Perhaps this can be done with specific nodes too.

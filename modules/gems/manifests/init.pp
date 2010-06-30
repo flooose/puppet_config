@@ -1,6 +1,6 @@
 # /etc/puppet/modules/gems/manifests/init.pp
 
-class gems {
+class gems_sk_all {
     package { 
         "god":
             provider => gem,
@@ -8,8 +8,19 @@ class gems {
         "rake":
             provider => gem,
             ensure => installed;
-	"rails":
+    }
+}
+
+class gems_b2c_base {
+    package {
+        "pg":
             provider => gem,
-            #ensure => "--pre";
+            ensure => installed;
+        "rack":
+            provider => gem,
+            ensure => installed;
+        "rails":
+            provider => gem,
+            ensure => "3.0.0.beta4";
     }
 }
