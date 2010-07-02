@@ -28,11 +28,15 @@ node 'ext-b2c-sk-test' inherits default {
     include gems_b2c_base
     include ree
     include nginx
+    include sphinx
     adva_users{"application": username => "application",}
 }
 
 # Test node for sktest
 node 'ext-con-sk-test' {
     include puppet_client
+    include base_configs
+    include gems_ext_con
     include ree
+    include nginx
 }

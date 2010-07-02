@@ -1,0 +1,13 @@
+server {
+    listen       80;
+    server_name  mrtg.ext-con-6k-test.siewert-kau.de;
+    access_log   /var/log/nginx/mrtg.ext-con-6k-test.siewert-kau.de;
+
+    root         /srv/mrtg/;
+    index        index.html index.htm;
+
+#    location / {
+#      auth_basic            mrtg;
+#      auth_basic_user_file  /etc/nginx/conf/mrtg.htpasswd;
+#    }
+}

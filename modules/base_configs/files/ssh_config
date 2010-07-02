@@ -48,6 +48,7 @@ Host *
     HashKnownHosts yes
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials no
+    ForwardAgent yes
 
 Host sk1
   HostName 192.168.111.120

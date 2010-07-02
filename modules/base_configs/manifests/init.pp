@@ -16,8 +16,8 @@ class base_configs {
             owner => "root",
             group => "root",
             mode  => 440,
-            source  => "puppet:///base_configs/sudoers",
-            require => Package["sudo"];
+            source  => "puppet:///base_configs/sudoers";
+            #require => Package["sudo"];
         # apt sources updated to allow installation from backports
         "/etc/apt/sources.list":
             owner   => "root",

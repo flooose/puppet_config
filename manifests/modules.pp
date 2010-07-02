@@ -3,6 +3,7 @@
 import "base_packages"
 import "base_configs"
 import "users"
+import "sphinx"
 import "gems"
 import "ree"
 import "nginx"

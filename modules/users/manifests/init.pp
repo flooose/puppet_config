@@ -31,3 +31,10 @@ define adva_users($username){
         source  => "puppet:///base_configs/authorized_keys",
     }
 }
+
+class application {
+    file {
+        "/home/application/.profile":
+            source => "puppet:///base_configs/apt/application_profile";
+    }
+}

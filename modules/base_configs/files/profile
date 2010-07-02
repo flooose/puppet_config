@@ -25,5 +25,7 @@ if [ -d /opt/ruby-ee ]; then
 fi
 
 export PATH
+export EDITOR="vim"
+export PAGER="less"
 
 umask 022
