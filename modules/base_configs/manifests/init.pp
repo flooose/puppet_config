@@ -23,19 +23,15 @@ class base_configs {
             owner   => "root",
             group   => "root",
             mode    => 644,
-            source  => "puppet:///base_configs/sources.list";
+            source  => "puppet:///base_configs/apt/sources.list";
         # Every system user has the same ssh aliases, so let's 
         # centralize them
         "/etc/ssh/ssh_config":
             owner   => "root",
             group   => "root",
             mode    => 644,
-            source  => "puppet:///base_configs/ssh_config",
-    }
-}
-
-class b2c_base_configs {
-    file {
+            source  => "puppet:///base_configs/ssh_config";
+        # Pin Postgres to 8.4
         "/etc/apt/preferences":
             source => "puppet:///base_configs/apt/preferences_b2c";
     }

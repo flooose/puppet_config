@@ -11,8 +11,10 @@ node default {
 
 # The puppetmasterd node should inherit default and then have
 # directives specific to being a master.
-node 'servercharlie.bestgroup' {
-    include puppet_client
+node 'servercharlie.bestgroup' inherits default {
+    # TODO: Refactor. Charlie needs postgres stuff, but it shouldn't be
+    # named in b2c_test
+    include b2c_test
     adva_users{"puppet-admin": username => "puppet-admin",}
 }
 
@@ -21,12 +23,12 @@ node 'servercharlie.bestgroup' {
 # and refactor base_packages to sk_base_packages, i.e. only
 # those packages commen to all of s-k
 node 'ext-b2c-sk-test' inherits default {
-    include b2c_base_configs
     include b2c_test
     include sk_base
     include gems_sk_all
     include gems_b2c_base
     include ree
+    include packages::redis
     include nginx
     include sphinx
     adva_users{"application": username => "application",}
@@ -34,9 +36,13 @@ node 'ext-b2c-sk-test' inherits default {
 
 # Test node for sktest
 node 'ext-con-sk-test' {
-    include puppet_client
+    #include puppet_client
     include base_configs
-    include gems_ext_con
-    include ree
-    include nginx
+    #include gems_ext_con
+    #include ree
+    #include nginx
+}
+
+node /ext-con-sk-\d\d/ {
+    include base_configs
 }
