@@ -31,8 +31,15 @@ class base_configs {
             group   => "root",
             mode    => 644,
             source  => "puppet:///base_configs/ssh_config";
+    }
+}
+
+class b2c_base_configs {
+    file {
         # Pin Postgres to 8.4
         "/etc/apt/preferences":
             source => "puppet:///base_configs/apt/preferences_b2c";
     }
+
 }
+

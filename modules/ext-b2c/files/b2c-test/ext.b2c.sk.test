@@ -1,0 +1,66 @@
+server {
+  listen       				80;
+  server_name  				ext-b2c-sk-test;
+  access_log   				/home/application/projects/sk_b2c/testing/shared/log/nginx_access.log;
+  root				        /home/application/projects/sk_b2c/testing/current/public;
+  index        				index.html index.htm;
+
+  auth_basic            "Staging";
+  auth_basic_user_file  staging.sk.htpasswd;
+
+  # passenger stuff
+  passenger_enabled   on;
+  rails_env           test;
+  rails_spawn_method smart-lv2;
+  rails_framework_spawner_idle_time 1800;
+  rails_app_spawner_idle_time 600;
+
+  location ~* ^/(javascripts|stylesheets|images/layout|images/colorbox|digital_contents) {
+    expires max;
+  }
+  location /data/pricelists { 
+    root /home/application/projects/s_k/staging/shared;
+    internal;
+  }
+
+  # For the app maintenance
+  if (-f $document_root/system/maintenance.html) {
+    rewrite ^(.*)$ /system/maintenance.html break;
+    return 503;
+  }
+}
+
+#server {
+#  listen                                443;
+#  server_name  				ext-con-sk-test.siewert-kau.de;
+#  access_log   				/home/application/projects/s_k/staging/shared/log/nginx_access.log;
+#  root        	 			/home/application/projects/s_k/staging/current/public;
+#  index        				index.html index.htm;
+#
+#  auth_basic            "Staging";
+#  auth_basic_user_file  staging.sk.htpasswd;
+#  
+#  # passenger stuff
+#  passenger_enabled   on;
+#  rails_env           staging;
+#  rails_spawn_method smart-lv2;
+#  rails_framework_spawner_idle_time 1800;
+#  rails_app_spawner_idle_time 600;
+#
+#  ssl                                   on;
+#  ssl_certificate                       /home/application/.ssh/siewert-kau.de.chained.crt;
+#  ssl_certificate_key                   /home/application/.ssh/siewert-kau.de.key;
+#
+#  location ~* ^/(javascripts|stylesheets|images/layout|images/colorbox|digital_contents) {
+#    expires max;
+#  }
+#  location /data/pricelists { 
+#    root /home/application/projects/s_k/staging/shared;
+#    internal;
+#  }
+#
+#  # For the app maintenance
+#  if (-f $document_root/system/maintenance.html) {
+#    rewrite ^(.*)$ /system/maintenance.html break;
+#  }
+#}
