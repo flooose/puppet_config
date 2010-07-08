@@ -5,13 +5,13 @@ class ext-b2c::nginx {
             owner   => "root",
             group   => "root",
             mode    => 644,
-            source  => "puppet:///b2c-test/init.d/nginx";
+            source  => "puppet:///ext-b2c/init.d/nginx";
         "/etc/logrotate.d/nginx":
             ensure  => present,
             owner   => "root",
             group   => "root",
             mode    => 644,
-            source  => "puppet:///b2c-test/logrotate.d/nginx";
+            source  => "puppet:///ext-b2c/logrotate.d/nginx";
     }
 
     exec { "/opt/ruby-ee/bin/passenger-install-nginx-module --auto --prefix=/opt/nginx --auto-download --extra-configure-flags='--with-http_ssl_module'":
