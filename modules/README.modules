@@ -1,3 +1,33 @@
 # please see:
 # http://projects.puppetlabs.com/projects/puppet/wiki/Puppet_Best_Practice
-# for clarification of this file structure
+#
+
+A Module should represent "units" of some sort. In the puppet documentation
+"module standard", the examples often refer to servers (probably server groups).
+
+One note on the site remarks something like "If I can say is X up, then X
+should probably be a Module"
+
+This is the thought behind the module layout. So far we have ext-b2c, ext-con,
+and (just now started), advabest.
+
+The Modules that don't refer to (groups of) Servers, exist with the thought
+that they are natural categories, that will be in common to all servers. That
+being said, the do need to be refactored. For instance, we have an 'nginx'
+Module that will be merged into the 'packages' module.
+
+For the future this means that things like the 'nginx' class in the (future)
+'packages' module, will be stripped of their system config files, like for
+instance, those in /opt/nginx/conf. This files would then be introduced into
+a (perhaps) 'configs' class in server Modules.
+
+This has two benefits:
+1. duplication of packages that would be included repeatedly in each server
+   Module would be minimized, while the config files for these packages could
+   be tailored to that specific server Module and more easily managed for all
+   of the different hosts in that server Module.
+2. Once templates are introduced, repetition of config files could also go
+   away, once again nullifying the need for the config files in each package
+   in the 'packages' Module.
+
+

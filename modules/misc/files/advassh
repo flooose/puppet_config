@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# vim:ft=sh
-#
-# Modified from the original at: www.earthinfo.org/an-easy-way-to-use-gnu-screen-over-ssh/
-
-ssh -t $1 screen -R
-
