@@ -30,4 +30,5 @@ This has two benefits:
    away, once again nullifying the need for the config files in each package
    in the 'packages' Module.
 
-
+So, in summary, packages::package_name signifies existence of a package.
+server_name_or_group::package_name signifies config files.

@@ -1,10 +1,14 @@
 class ext-b2c::nginx {
+    # TODO: should this be gone? It gets installed by the package,
+    # but it might be better leave this so too ensure that it
+    # persists, especially since there is nothing server specific
+    # here.
     file {
         "/etc/init.d/nginx":
             ensure  => present,
             owner   => "root",
             group   => "root",
-            mode    => 644,
+            mode    => 755,
             source  => "puppet:///ext-b2c/init.d/nginx";
         "/etc/logrotate.d/nginx":
             ensure  => present,

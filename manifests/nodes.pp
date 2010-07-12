@@ -5,8 +5,9 @@
 node default {
     include puppet_client
     include base_configs
-    include base_all
+    include base_packages::base_all
     adva_users{"adva": username => "adva",}
+    adva_users{"application": username => "application",}
 }
 
 # The puppetmasterd node should inherit default and then have
@@ -23,16 +24,15 @@ node 'servercharlie.bestgroup' inherits default {
 # and refactor base_packages to sk_base_packages, i.e. only
 # those packages commen to all of s-k
 node 'ext-b2c-sk-test' inherits default {
-    include b2c_test
+    include base_packages::b2c_test
     include b2c_base_configs
-    include sk_base
+    include base_packages::sk_base
     include gems_sk_all
     include gems_b2c_base
     include ree
     include packages::redis
     include ext-b2c::nginx
-    include sphinx
-    adva_users{"application": username => "application",}
+    include packages::sphinx
 }
 
 # Test node for sktest
@@ -46,4 +46,8 @@ node 'ext-con-sk-test' {
 
 node /ext-con-sk-\d\d/ {
     include base_configs
+}
+
+node 'advabest-dev-ds87-230-55-112' inherits default {
+
 }

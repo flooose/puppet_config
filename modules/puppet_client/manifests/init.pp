@@ -9,13 +9,27 @@ class puppet_client {
                 source  => "puppet:///puppet_client/init.d/puppet_sys_ruby";
         }
     } else {
-        file {
-            "/etc/init.d/puppet":
-                ensure  => present,
-                owner   => "root",
-                group   => "root",
-                mode    => 755,
-                source  => "puppet:///puppet_client/init.d/puppet_ree";
+        case $operatingsystem {
+            ubuntu: {
+                file {
+                    "/etc/init.d/puppet":
+                        ensure  => present,
+                        owner   => "root",
+                        group   => "root",
+                        mode    => 755,
+                        source  => "puppet:///puppet_client/init.d/puppet.ubuntu.init";
+                }
+            }
+            debian: {
+                file {
+                    "/etc/init.d/puppet":
+                        ensure  => present,
+                        owner   => "root",
+                        group   => "root",
+                        mode    => 755,
+                        source  => "puppet:///puppet_client/init.d/puppet_ree";
+                }
+            }
         }
     }
 

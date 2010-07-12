@@ -18,12 +18,6 @@ class base_configs {
             mode  => 440,
             source  => "puppet:///base_configs/sudoers";
             #require => Package["sudo"];
-        # apt sources updated to allow installation from backports
-        "/etc/apt/sources.list":
-            owner   => "root",
-            group   => "root",
-            mode    => 644,
-            source  => "puppet:///base_configs/apt/sources.list";
         # Every system user has the same ssh aliases, so let's 
         # centralize them
         "/etc/ssh/ssh_config":
@@ -31,6 +25,18 @@ class base_configs {
             group   => "root",
             mode    => 644,
             source  => "puppet:///base_configs/ssh_config";
+    }
+    case $operatingsystem {
+        debian: {
+            file {
+                # apt sources updated to allow installation from backports
+                "/etc/apt/sources.list":
+                    owner   => "root",
+                    group   => "root",
+                    mode    => 644,
+                    source  => "puppet:///base_configs/apt/sources.list";
+            }
+        }
     }
 }
 

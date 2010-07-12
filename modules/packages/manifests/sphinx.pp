@@ -1,10 +1,10 @@
-# file /etc/puppet/modules/sphinx/manifests/init.pp
+# file /etc/puppet/modules/packages/manifests/sphinx.pp
 
-class sphinx {
+class packages::sphinx {
     file {
         "/home/adva/builds/sphinx_0.9.9-1_amd64.deb":
             ensure => present,
-            source   => "puppet:///sphinx/sphinx_0.9.9-1_amd64.deb";
+            source   => "puppet:///packages/sphinx/sphinx_0.9.9-1_amd64.deb";
     }
             
     package {
