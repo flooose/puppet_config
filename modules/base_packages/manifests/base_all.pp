@@ -22,10 +22,9 @@ class base_packages::base_all {
             ensure => installed;
         "vim-nox":
             ensure => installed;
-         "git":
+        "vim":
             ensure => installed;
-         "munin-node":
+        "munin-node":
             ensure => installed;
     }
-
 }

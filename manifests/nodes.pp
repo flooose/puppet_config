@@ -48,6 +48,8 @@ node /ext-con-sk-\d\d/ {
     include base_configs
 }
 
-node 'advabest-dev-ds87-230-55-112' inherits default {
-
+node 'ds87-230-55-112' inherits default {
+    include packages::ree
+    include advabest::packages
+    #include advabest::gems
 }
