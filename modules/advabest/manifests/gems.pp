@@ -1,4 +1,4 @@
-class advabest-dev-ds87-230-55-112::gems{
+class advabest::gems {
     package { 
         "actionmailer":
             ensure => "2.3.4",
@@ -35,7 +35,7 @@ class advabest-dev-ds87-230-55-112::gems{
             provider => gem;
         "ezcrypto":
             ensure => "0.7.2",
-            "provider => gem;":
+            provider => gem;
         "facter":
             ensure => "1.5.6",
             provider => gem;
@@ -70,7 +70,7 @@ class advabest-dev-ds87-230-55-112::gems{
             ensure => "2.8.1",
             provider => gem;
         "newrelic_rpm":
-            ensure => 2.10.5,
+            ensure => "2.10.5",
             provider => gem;
         "passenger":
             ensure => "2.2.14",
@@ -88,7 +88,7 @@ class advabest-dev-ds87-230-55-112::gems{
             ensure => "0.8.4",
             provider => gem;
         "puppet":
-            ensure => 0.24.8,
+            ensure => "0.24.8",
             provider => gem;
         "rack":
             ensure => "1.0.1",
@@ -106,7 +106,7 @@ class advabest-dev-ds87-230-55-112::gems{
             ensure => "1.7.0",
             provider => gem;
         "rmagick":
-            ensure => 2.12.2,
+            ensure => "2.12.2",
             provider => gem;
         "rspec":
             ensure => "1.3.0",

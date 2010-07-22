@@ -10,5 +10,7 @@ class advabest::packages {
             ensure => installed;
         "mysql-server":
             ensure => installed;
+        "libmagick9-dev":
+            ensure => installed;
     }
 }

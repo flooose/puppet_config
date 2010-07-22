@@ -48,9 +48,6 @@ class base_packages::sk_base {
     #package { "mysql-server/lenny-backports": ensure => installed, }
     #package { "mysql-client-5.1/lenny-backports": ensure => installed, }
 
-    # munin-node
-    package { "munin-node": ensure => installed, }
-
     # dev libraries for Ruby Enterprise
     package {
         "libssl-dev":

@@ -156,3 +156,13 @@ Host puppet
   HostName 193.159.180.41
   Port 42022
   User puppet-admin
+
+Host advahe
+  HostName ds87-230-55-112.dedicated.hosteurope.de
+  User adva
+  Port 42022
+
+Host apphe
+  HostName ds87-230-55-112.dedicated.hosteurope.de
+  User application
+  Port 42022

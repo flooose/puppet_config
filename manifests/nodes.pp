@@ -16,6 +16,7 @@ node 'servercharlie.bestgroup' inherits default {
     # TODO: Refactor. Charlie needs postgres stuff, but it shouldn't be
     # named in b2c_test
     include servercharlie
+    include servercharlie::packages
     adva_users{"puppet-admin": username => "puppet-admin",}
 }
 
@@ -39,17 +40,20 @@ node 'ext-b2c-sk-test' inherits default {
 node 'ext-con-sk-test' {
     #include puppet_client
     include base_configs
+    ext-con::adva_users{"application": username => "application",}
     #include gems_ext_con
     #include ree
     #include nginx
 }
 
 node /ext-con-sk-\d\d/ {
-    include base_configs
+    #include base_configs
+    ext-con::adva_users{"application": username => "application",}
 }
 
 node 'ds87-230-55-112' inherits default {
     include packages::ree
     include advabest::packages
-    #include advabest::gems
+    include advabest::gems
+    include advabest::nginx
 }

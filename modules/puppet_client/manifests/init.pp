@@ -6,7 +6,8 @@ class puppet_client {
                 owner   => "root",
                 group   => "root",
                 mode    => 755,
-                source  => "puppet:///puppet_client/init.d/puppet_sys_ruby";
+                source  => "puppet:///puppet_client/init.d/puppet.ubuntu.init";
+               # source  => "puppet:///puppet_client/init.d/puppet_sys_ruby";
         }
     } else {
         case $operatingsystem {
