@@ -12,5 +12,7 @@ class advabest::packages {
             ensure => installed;
         "libmagick9-dev":
             ensure => installed;
+        "libxslt-dev":
+            ensure => installed;
     }
 }

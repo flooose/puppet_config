@@ -13,7 +13,7 @@ DAEMON=/usr/sbin/puppetd
 DAEMON_OPTS=""
 NAME=puppetd
 DESC="puppet configuration management tool"
-PIDFILE="/var/puppet/run/${NAME}.pid"
+PIDFILE="/var/lib/puppet/run/${NAME}.pid"
 
 test -x $DAEMON || exit 0
 

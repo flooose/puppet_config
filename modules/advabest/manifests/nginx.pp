@@ -1,8 +1,5 @@
 class advabest::nginx {
-    # TODO: should this be gone? It gets installed by the package,
-    # but it might be better leave this so too ensure that it
-    # persists, especially since there is nothing server specific
-    # here.
+    # the /etc/ files
     file {
         "/etc/init.d/nginx":
             ensure  => present,
@@ -45,10 +42,15 @@ class advabest::nginx {
             source => "puppet:///advabest/nginx_conf/staging.sk.htpasswd";
 
         # Sites available
+        "/opt/nginx/conf/sites-available":
+            ensure => directory;
         "/opt/nginx/conf/sites-available/advabest.staging":
-            source => "puppet:///advabest/nginx_conf/advabest.staging";
+            replace => false,
+            source => "puppet:///advabest/nginx_conf/sites-available/advabest.staging";
 
         # Sites enabled
+        "/opt/nginx/conf/sites-enabled":
+            ensure => directory;
         "/opt/nginx/conf/sites-enabled/advabest.staging":
             ensure => "/opt/nginx/conf/sites-available/advabest.staging",
             require => File["/opt/nginx/conf/sites-available/advabest.staging"];

@@ -15,7 +15,7 @@ node default {
 node 'servercharlie.bestgroup' inherits default {
     # TODO: Refactor. Charlie needs postgres stuff, but it shouldn't be
     # named in b2c_test
-    include servercharlie
+    include servercharlie::nginx
     include servercharlie::packages
     adva_users{"puppet-admin": username => "puppet-admin",}
 }
@@ -54,6 +54,6 @@ node /ext-con-sk-\d\d/ {
 node 'ds87-230-55-112' inherits default {
     include packages::ree
     include advabest::packages
-    include advabest::gems
+    #include advabest::gems
     include advabest::nginx
 }

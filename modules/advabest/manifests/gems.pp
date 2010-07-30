@@ -132,5 +132,14 @@ class advabest::gems {
         "whenever":
             ensure => "0.4.1",
             provider => gem;
+        "cucumber":
+            ensure => installed;
+            provider => gem;
+        "factory_girl":
+            ensure => installed;
+            provider => gem;
+        "ruby-debug":
+            ensure => installed;
+            provider => gem;
     }
 }
