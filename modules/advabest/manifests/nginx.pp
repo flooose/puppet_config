@@ -47,6 +47,9 @@ class advabest::nginx {
         "/opt/nginx/conf/sites-available/advabest.staging":
             replace => false,
             source => "puppet:///advabest/nginx_conf/sites-available/advabest.staging";
+        "/opt/nginx/conf/sites-available/advabest.production":
+            replace => false,
+            source => "puppet:///advabest/nginx_conf/sites-available/advabest.production";
 
         # Sites enabled
         "/opt/nginx/conf/sites-enabled":
@@ -54,5 +57,8 @@ class advabest::nginx {
         "/opt/nginx/conf/sites-enabled/advabest.staging":
             ensure => "/opt/nginx/conf/sites-available/advabest.staging",
             require => File["/opt/nginx/conf/sites-available/advabest.staging"];
+        "/opt/nginx/conf/sites-enabled/advabest.production":
+            ensure => "/opt/nginx/conf/sites-available/advabest.production",
+            require => File["/opt/nginx/conf/sites-available/advabest.production"];
     }
 }
