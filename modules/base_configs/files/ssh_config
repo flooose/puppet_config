@@ -144,7 +144,7 @@ Host advabest
   User rails
 
 Host staging_advabest
-  HostName staging.advabest.com
+  HostName staging.advabest.managedmachine.com
   User rails
 
 Host b2ctest

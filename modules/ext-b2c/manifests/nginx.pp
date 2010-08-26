@@ -45,10 +45,14 @@ class ext-b2c::nginx {
             source => "puppet:///ext-b2c/b2c-test/staging.sk.htpasswd";
 
         # Sites available
+        "/opt/nginx/conf/sites-available":
+            ensure => directory;
         "/opt/nginx/conf/sites-available/ext.b2c.sk.test":
             source => "puppet:///ext-b2c/b2c-test/ext.b2c.sk.test";
 
         # Sites enabled
+        "/opt/nginx/conf/sites-enabled":
+            ensure => directory;
         "/opt/nginx/conf/sites-enabled/ext.b2c.sk.test":
             ensure => "/opt/nginx/conf/sites-available/ext.b2c.sk.test",
             require => File["/opt/nginx/conf/sites-available/ext.b2c.sk.test"];

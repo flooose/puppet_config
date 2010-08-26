@@ -31,6 +31,13 @@ define ext-con::adva_users($username){
         mode    => "644",
         source  => "puppet:///base_configs/authorized_keys",
     }
+    file { "/home/$username/.bashrc":
+        ensure  => file,
+        group   => "$username",
+        owner   => "$username",
+        mode    => "644",
+        source  => "puppet:///base_configs/user.bashrc",
+    }
 }
 
 #class application {
