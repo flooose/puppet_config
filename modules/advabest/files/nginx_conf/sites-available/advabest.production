@@ -60,20 +60,32 @@ server {
   if (-f $document_root/system/maintenance.html) {
     rewrite ^(.*)$ /system/maintenance.html break;
   }
-  
-  ## For advabest\.de|at
-  #if ($host ~* www\.advabest\.(de|at)) {
-  #  rewrite ^.*(/?.*)$ http://www.advabest.com/de/$1 permanent;
-  #}
+}
 
-  ## For cached files, thanks to http://brainspl.at/nginx.conf.txt
-  #if ( -f /cache/$host/$request_filename ) {
-  #  break;
-  #}
-  #if ( -f /cache/$host/$request_filename/index.html ) {
-  #  rewrite (.*) /cache/$host/$request_filename/index.html break;
-  #}
-  #if ( -f /cache/$host/$request_filename.html ) {
-  #  rewrite (.*) /cache/$host/$request_filename.html break;
-  #}
+## Basic authentication can be created for SAAS customers by
+## doing something similar to the following.
+#server {
+#       server_name             intranet.advabest.com;
+#       access_log              /home/application/projects/advabest/production/shared/log/nginx_access.log;
+#       root                    /home/application/projects/advabest/production/current/public;
+#       index                   index.html index.htm;
+#       auth_basic              "Production";
+#       auth_basic_user_file    staging.sk.htpasswd;
+#
+#       # passenger stuff
+#       passenger_enabled   on;
+#       rails_env           production;
+#       rails_spawn_method smart-lv2;
+#       rails_framework_spawner_idle_time 1800;
+#       rails_app_spawner_idle_time 600;
+#
+#       # For the app maintenance
+#       if (-f $document_root/system/maintenance.html) {
+#         rewrite ^(.*)$ /system/maintenance.html break;
+#         return 503;
+#       }
+#}
+
+
+}
 }
