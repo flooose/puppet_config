@@ -13,4 +13,6 @@ if [ -f "/etc/bash.bashrc" ]; then
   . "/etc/bash.bashrc"
 fi
 
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
 # vim:ft=sh

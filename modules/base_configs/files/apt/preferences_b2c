@@ -81,3 +81,23 @@ Pin-Priority: 700
 Package: libpq-dev
 Pin: release a=lenny-backports
 Pin-Priority: 700
+
+Package: libpq5
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: sqlite3-doc
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: libsqlite3-dev
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: libsqlite3-0
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: sqlite3
+Pin: release a=lenny-backports
+Pin-Priority: 700
