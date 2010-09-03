@@ -51,32 +51,32 @@ Host *
     ForwardAgent yes
 
 Host sk1
-  HostName 192.168.111.120
+  HostName ext-con-sk-01.siewert-kau.de
   Port 42022
   User adva
 
 Host sk1_app
-  HostName 192.168.111.120
+  HostName ext-con-sk-01.siewert-kau.de
   Port 42022
   User application
 
 Host sk2
-  HostName 192.168.111.121
+  HostName ext-con-sk-02.siewert-kau.de
   Port 42022
   User adva
 
 Host sk2_app
-  HostName 192.168.111.121
+  HostName ext-con-sk-02.siewert-kau.de
   Port 42022
   User application
 
 Host sktest
-  HostName 192.168.111.125
+  HostName ext-con-sk-test.siewert-kau.de
   Port 42022
   User adva
 
 Host sktest_app
-  HostName 192.168.111.125
+  HostName ext-con-sk-test.siewert-kau.de
   Port 42022
   User application
 

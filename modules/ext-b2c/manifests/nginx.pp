@@ -55,6 +55,6 @@ class ext-b2c::nginx {
             ensure      => directory;
         "/opt/nginx/conf/sites-enabled/ext.b2c.sk.test":
             ensure      => "/opt/nginx/conf/sites-available/ext.b2c.sk.test",
-            require     => kFile["/opt/nginx/conf/sites-available/ext.b2c.sk.test"];
+            require     => File["/opt/nginx/conf/sites-available/ext.b2c.sk.test"];
     }
 }

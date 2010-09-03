@@ -4,11 +4,11 @@ class servercharlie::packages {
             ensure => installed;
         "postgresql":
             ensure => installed;
-        "postgresql-server-dev-8.3":
-            ensure => installed;
         "libsqlite3-dev":
             ensure => installed;
         "sqlite3":
+            ensure => installed;
+        "apache2":
             ensure => installed;
     }
 }

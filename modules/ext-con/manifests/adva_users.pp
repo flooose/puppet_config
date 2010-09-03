@@ -12,7 +12,6 @@ define ext-con::adva_users($username){
 #        gid             => "$username",
 #        managehome      => true,
 #        home            => "/home/$username",
-#        password        => '',
 #        shell           => "/bin/bash",
 #        ensure          => present,
 #    }

@@ -34,7 +34,7 @@ class advabest::nginx {
     file {
         # main nginx: /opt/nginx/nginx.conf
         "/opt/nginx/conf/nginx.conf":
-            require    `=> Exec["/opt/ruby-ee/bin/passenger-install-nginx-module --auto --prefix=/opt/nginx --auto-download --extra-configure-flags='--with-http_ssl_module'"],
+            require     => Exec["/opt/ruby-ee/bin/passenger-install-nginx-module --auto --prefix=/opt/nginx --auto-download --extra-configure-flags='--with-http_ssl_module'"],
             source      => "puppet:///advabest/nginx_conf/nginx.conf";
 
         # htaccess

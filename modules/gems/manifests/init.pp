@@ -1,5 +1,9 @@
 # /etc/puppet/modules/gems/manifests/init.pp
 
+# TODO: This should be deprecated, at least for
+# servers running rails3. Gems are for the most
+# part managed by our applications and shouldn't
+# be managed by puppet.
 class gems_sk_all {
     package { 
         "god":
