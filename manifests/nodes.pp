@@ -41,6 +41,7 @@ node 'ext-con-sk-test' {
     #include puppet_client
     include base_configs
     ext-con::adva_users{"application": username => "application",}
+    ext-con::adva_users{"adva": username => "adva",}
     #include gems_ext_con
     #include ree
     #include nginx
@@ -49,6 +50,7 @@ node 'ext-con-sk-test' {
 node /ext-con-sk-\d\d/ {
     #include base_configs
     ext-con::adva_users{"application": username => "application",}
+    ext-con::adva_users{"adva": username => "adva",}
 }
 
 node 'ds87-230-55-112' inherits default {
