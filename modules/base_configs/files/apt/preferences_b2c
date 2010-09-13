@@ -66,6 +66,18 @@ Package: postgresql-server-dev-8.4
 Pin: release a=lenny-backports
 Pin-Priority: 700
 
+Package: libossp-uuid15
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: postgresql-contrib-8.4
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: postgresql-contrib
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
 Package: pgadmin3
 Pin: release a=lenny-backports
 Pin-Priority: 700
