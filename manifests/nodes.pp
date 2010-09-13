@@ -29,8 +29,6 @@ node 'ext-b2c-sk-test' inherits default {
     include b2c_base_configs
     include base_packages::sk_base
     include gems_sk_all
-    #include gems_b2c_base
-    #include ree
     include packages::redis
     include ext-b2c::nginx
     include packages::sphinx
