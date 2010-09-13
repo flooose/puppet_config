@@ -10,7 +10,7 @@ server {
 
   # passenger stuff
   passenger_enabled   on;
-  rails_env           production;
+  rails_env           staging;
   rails_spawn_method smart-lv2;
   rails_framework_spawner_idle_time 1800;
   rails_app_spawner_idle_time 600;
@@ -42,7 +42,7 @@ server {
   
   # passenger stuff
   passenger_enabled   on;
-  rails_env           production;
+  rails_env           staging;
   rails_spawn_method smart-lv2;
   rails_framework_spawner_idle_time 1800;
   rails_app_spawner_idle_time 600;
