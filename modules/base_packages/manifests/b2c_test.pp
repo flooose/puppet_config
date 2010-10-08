@@ -16,6 +16,10 @@ class base_packages::b2c_test {
             ensure => installed;
         "libpq-dev":
             ensure => installed;
+        "bcurl4-openssl-dev":
+            ensure => installed;
+        "imagemagick":
+            ensure => installed;
     }
 }
 

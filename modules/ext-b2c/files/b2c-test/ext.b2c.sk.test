@@ -5,8 +5,8 @@ server {
   root				        /home/application/projects/sk_b2c/staging/current/public;
   index        				index.html index.htm;
 
-  auth_basic            "Staging";
-  auth_basic_user_file  staging.sk.htpasswd;
+  #auth_basic            "Staging";
+  #auth_basic_user_file  staging.sk.htpasswd;
 
   # passenger stuff
   passenger_enabled   on;
@@ -37,8 +37,8 @@ server {
   root				        /home/application/projects/sk_b2c/staging/current/public;
   index        				index.html index.htm;
 
-  auth_basic            "Staging";
-  auth_basic_user_file  staging.sk.htpasswd;
+  #auth_basic            "Staging";
+  #auth_basic_user_file  staging.sk.htpasswd;
   
   # passenger stuff
   passenger_enabled   on;
