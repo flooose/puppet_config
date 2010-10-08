@@ -1,0 +1,27 @@
+server {
+  listen       				80;
+  server_name  			    globalize-rails.org;
+  access_log   				/home/application/projects/globalize-rails.org/log/globalize-rails.org.log;
+  root				        /home/application/projects/globalize-rails.org/export;
+  index        				index.html index.htm;
+
+  try_files $uri $uri/index.html $uri.html;
+
+  #auth_basic            "Staging";
+  #auth_basic_user_file  staging.sk.htpasswd;
+
+  ## passenger stuff
+  #passenger_enabled   on;
+  #rails_env           staging;
+  #rails_spawn_method smart-lv2;
+  #rails_framework_spawner_idle_time 1800;
+  #rails_app_spawner_idle_time 600;
+
+  #location ~* ^/(javascripts|stylesheets|images/layout|images/colorbox|digital_contents) {
+  #  expires max;
+  #}
+  #location /data/pricelists { 
+  #  root /home/application/projects/s_k/staging/shared;
+  #  internal;
+  #}
+}

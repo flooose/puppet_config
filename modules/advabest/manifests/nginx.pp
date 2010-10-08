@@ -45,14 +45,15 @@ class advabest::nginx {
         "/opt/nginx/conf/sites-available":
             ensure      => directory;
         "/opt/nginx/conf/sites-available/advabest.staging":
-            replace     => false,
             source      => "puppet:///advabest/nginx_conf/sites-available/advabest.staging";
         "/opt/nginx/conf/sites-available/advabest.production":
-            replace     => false,
             source      => "puppet:///advabest/nginx_conf/sites-available/advabest.production";
         "/opt/nginx/conf/sites-available/intranet.advabest.com":
-            replace     => false,
             source      => "puppet:///advabest/nginx_conf/sites-available/intranet.advabest.com";
+        "/opt/nginx/conf/sites-available/globalize-rails.org":
+            source      => "puppet:///advabest/nginx_conf/sites-available/globalize-rails.org";
+        "/opt/nginx/conf/sites-available/adva-cms.org":
+            source      => "puppet:///advabest/nginx_conf/sites-available/adva-cms.org";
 
         # Sites-enabled
         "/opt/nginx/conf/sites-enabled":
@@ -64,7 +65,13 @@ class advabest::nginx {
             ensure      => "/opt/nginx/conf/sites-available/advabest.production",
             require     => File["/opt/nginx/conf/sites-available/advabest.production"];
         "/opt/nginx/conf/sites-enabled/intranet.advabest.com":
-            ensure      => "/opt/nginx/conf/sites-available/advabest.production",
+            ensure      => "/opt/nginx/conf/sites-available/intranet.advabest.com",
             require     => File["/opt/nginx/conf/sites-available/intranet.advabest.com"];
+        "/opt/nginx/conf/sites-enabled/globalize-rails.org":
+            ensure      => "/opt/nginx/conf/sites-available/globalize-rails.org",
+            require     => File["/opt/nginx/conf/sites-available/globalize-rails.org"];
+        "/opt/nginx/conf/sites-enabled/adva-cms.org":
+            ensure      => "/opt/nginx/conf/sites-available/adva-cms.org",
+            require     => File["/opt/nginx/conf/sites-available/adva-cms.org"];
     }
 }
