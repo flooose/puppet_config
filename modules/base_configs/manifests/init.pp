@@ -27,6 +27,8 @@ class base_configs {
             source  => "puppet:///base_configs/ssh_config";
     }
     case $operatingsystem {
+# refactor this: the sk debian machines should have their own configs
+# from servercharie
         debian: {
             file {
                 # apt sources updated to allow installation from backports

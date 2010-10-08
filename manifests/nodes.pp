@@ -16,6 +16,7 @@ node 'servercharlie.bestgroup' inherits default {
     # TODO: Refactor. Charlie needs postgres stuff, but it shouldn't be
     # named in b2c_test
     include servercharlie::nginx
+    include servercharlie::configs
     include servercharlie::packages
     adva_users{"puppet-admin": username => "puppet-admin",}
 }
