@@ -10,5 +10,11 @@ class servercharlie::packages {
             ensure => installed;
         "apache2":
             ensure => installed;
+        "libxmlsec1":
+            ensure => installed;
+        "libxmlsec1-openssl":
+            ensure => installed;
+        "xmlsec1":
+            ensure => installed;
     }
 }

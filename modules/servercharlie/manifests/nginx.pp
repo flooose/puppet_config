@@ -93,11 +93,11 @@ class servercharlie::nginx {
         #    group   => "root",
         #    require => File["/opt/nginx/conf/sites-enabled", "/opt/nginx/conf/sites-available"],
         #    mode    => 755;
-        #"/opt/nginx/conf/sites-enabled/gem_server.nginx.conf":
-        #    ensure  => "/opt/nginx/conf/sites-available/gem_server.nginx.conf",
-        #    owner   => "root",
-        #    group   => "root",
-        #    require => File["/opt/nginx/conf/sites-enabled", "/opt/nginx/conf/sites-available"],
-        #    mode    => 755;
+        "/opt/nginx/conf/sites-enabled/gem_server.nginx.conf":
+            ensure  => "/opt/nginx/conf/sites-available/gem_server.nginx.conf",
+            owner   => "root",
+            group   => "root",
+            require => File["/opt/nginx/conf/sites-enabled", "/opt/nginx/conf/sites-available"],
+            mode    => 755;
     }
 }
