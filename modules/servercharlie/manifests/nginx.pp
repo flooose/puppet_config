@@ -44,7 +44,7 @@ class servercharlie::nginx {
             group   => "root",
             mode    => 755,
             source  => "puppet:///servercharlie/nginx_conf/nginx.conf";
-        "/opt/nginx/conf/sites-available/adva.nginx.conf":
+        "/opt/nginx/conf/sites-available/hudson.nginx.conf":
             ensure  => present,
             owner   => "root",
             group   => "root",
@@ -75,7 +75,7 @@ class servercharlie::nginx {
     }
     # now the links
     file {
-        "/opt/nginx/conf/sites-enabled/adva.nginx.conf":
+        "/opt/nginx/conf/sites-enabled/hudson.nginx.conf":
             ensure  => "/opt/nginx/conf/sites-available/adva.nginx.conf",
             owner   => "root",
             group   => "root",
