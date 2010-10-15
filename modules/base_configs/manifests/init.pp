@@ -26,20 +26,20 @@ class base_configs {
             mode    => 644,
             source  => "puppet:///base_configs/ssh_config";
     }
-    case $operatingsystem {
-# refactor this: the sk debian machines should have their own configs
-# from servercharie
-        debian: {
-            file {
-                # apt sources updated to allow installation from backports
-                "/etc/apt/sources.list":
-                    owner   => "root",
-                    group   => "root",
-                    mode    => 644,
-                    source  => "puppet:///base_configs/apt/sources.list";
-            }
-        }
-    }
+    #case $operatingsystem {
+    ## refactor this: the sk debian machines should have their own configs
+    ## from servercharie
+    #    debian: {
+    #        file {
+    #            ## apt sources updated to allow installation from backports
+    #            #"/etc/apt/sources.list":
+    #            #    owner   => "root",
+    #            #    group   => "root",
+    #            #    mode    => 644,
+    #            #    source  => "puppet:///base_configs/apt/sources.list";
+    #        }
+    #    }
+    #}
 }
 
 class b2c_base_configs {
