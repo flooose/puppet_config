@@ -1,4 +1,5 @@
-IMPORTANT:
+Disclaimer
+------------------------------------------------------------
 This is not meant to be a public project. It only serves
 as an access point for some server configurations.
 
@@ -7,18 +8,19 @@ issues, bad code and DEADLY LIONS.
 
 Good luck!
 
-TODO:
--- add support for the following command-line options
-  1 ruby base path (edit init.d/puppet) to properly point
-    to this path
-  2 server/client install so that /etc/hosts can be properly
-    edited
-  3 specify address of server, if install is a client install
-  4 add support for adding 'puppet' user and group so that
-    'puppet-masterd --mkusers' doesn't have to be used.
 
-cp init.d/puppet /etc/init.d (perm: 755)
-cp default/puppet /etc/default (perm: 644)
+Content
+------------------------------------------------------------
+There are two types of manifests here:
+
+1. Manifests for servers or groups of servers. This is how
+puppet recommends doing it. These manifests manifest manage
+things for their respective servers/groups of servers.
+
+2. Manifests representing things that are likely to be
+in common to all or most servers. These are generally
+environment files like config files like bashrc and vimrc.
+
 
 ########## Notes to self #################
 for server set up:
