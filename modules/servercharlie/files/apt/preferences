@@ -109,3 +109,11 @@ Pin-Priority: 700
 Package: sqlite3
 Pin: release a=lenny-backports
 Pin-Priority: 700
+
+Package: git-core
+Pin: release a=lenny-backports
+Pin-Priority: 700
+
+Package: git
+Pin: release a=lenny-backports
+Pin-Priority: 700

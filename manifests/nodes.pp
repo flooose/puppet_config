@@ -8,6 +8,7 @@ node default {
     include base_packages::base_all
     adva_users{"adva": username => "adva",}
     adva_users{"application": username => "application",}
+    hudson_user{"hudson": username => "hudson",}
 }
 
 # The puppetmasterd node should inherit default and then have
@@ -52,6 +53,7 @@ node /ext-con-sk-\d\d/ {
     ext-con::adva_users{"adva": username => "adva",}
 }
 
+# host-europe server (for advabest)
 node 'ds87-230-55-112' inherits default {
     include packages::ree
     include advabest::packages
