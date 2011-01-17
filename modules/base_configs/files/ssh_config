@@ -130,14 +130,19 @@ Host floess
   User floess
 
 Host bravo
-  HostName 193.159.180.41
+  HostName 193.159.180.26
   Port 42020
   User adva
 
-Host bravochris
-  HostName 193.159.180.41
+Host chrisbravo
+  HostName 193.159.180.26
   Port 42020
   User chris.floess
+
+Host hudsonbravo
+  HostName 193.159.180.26
+  Port 42020
+  User hudson
 
 Host advabest
   HostName advabest.com
