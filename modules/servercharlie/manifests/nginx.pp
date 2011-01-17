@@ -50,7 +50,7 @@ class servercharlie::nginx {
             group   => "root",
             mode    => 755,
             require => File["/opt/nginx/conf/sites-available"],
-            source  => "puppet:///servercharlie/nginx_conf/sites-available/adva.nginx.conf";
+            source  => "puppet:///servercharlie/nginx_conf/sites-available/hudson.nginx.conf";
         "/opt/nginx/conf/sites-available/advabest_demo.conf":
             ensure  => present,
             owner   => "root",
@@ -76,7 +76,7 @@ class servercharlie::nginx {
     # now the links
     file {
         "/opt/nginx/conf/sites-enabled/hudson.nginx.conf":
-            ensure  => "/opt/nginx/conf/sites-available/adva.nginx.conf",
+            ensure  => "/opt/nginx/conf/sites-available/hudson.nginx.conf",
             owner   => "root",
             group   => "root",
             require => File["/opt/nginx/conf/sites-enabled", "/opt/nginx/conf/sites-available"],
